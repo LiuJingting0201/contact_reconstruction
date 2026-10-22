@@ -1,0 +1,79 @@
+{
+  "protocol": "real_mixed_no_kd_v1_m_s0_subject02",
+  "parent_protocol": "configs/resnet50_real_mixed_no_kd_v1.json",
+  "seed": 20261021,
+  "stage": "M-S0",
+  "model": {
+    "image_size": 256,
+    "backbone": "torchvision_resnet50",
+    "backbone_initialization": "ImageNet1K_V2",
+    "head": "Fast-HaMeR MANO transformer decoder",
+    "head_initialization": "new",
+    "teacher": false,
+    "knowledge_distillation": false,
+    "adversarial_loss": false,
+    "rhd_checkpoint_initialization": false
+  },
+  "datasets": {
+    "dexycb": "inputs/dexycb_train_m_s0/20200813-subject-02",
+    "freihand": "inputs/freihand_v2",
+    "rhd_labels": "artifacts/rhd_full_r0_20261020_01/train.npz",
+    "rhd_images": "inputs/rhd"
+  },
+  "batch_composition": {
+    "dexycb": 16,
+    "freihand": 10,
+    "rhd": 4
+  },
+  "sampling_fraction": {
+    "dexycb": 0.5333333333333333,
+    "freihand": 0.3333333333333333,
+    "rhd": 0.1333333333333333
+  },
+  "training": {
+    "updates": 500,
+    "workers": 8,
+    "eval_workers": 2,
+    "learning_rate": 0.0001,
+    "weight_decay": 0.0001,
+    "clip_grad_norm": 1.0,
+    "snapshots": [0, 100, 250, 500],
+    "gradient_log_interval": 100,
+    "eval_samples_per_domain": 64,
+    "eval_batch_size": 32
+  },
+  "augmentation": {
+    "dexycb_crop_rescale": 2.0,
+    "dexycb_scale_factor": 0.2,
+    "dexycb_translation_factor": 0.03,
+    "color_scale": 0.2,
+    "freihand_background_replace_rate": 0.75
+  },
+  "positive_camera": {
+    "minimum_scale": 0.05,
+    "initial_output_scale": 8.0
+  },
+  "losses": {
+    "visible_joints_2d_l1": 1.0,
+    "wrist_relative_joints_3d_l1": 5.0,
+    "fingertip_wrist_relative_3d_l1": 5.0,
+    "bone_direction_angular": 0.25,
+    "global_orient_geodesic": 0.5,
+    "articulated_pose_geodesic": 0.5,
+    "betas_l2": 0.001
+  },
+  "label_policy": {
+    "missing_labels": "masked out, never represented as valid zero targets",
+    "dexycb_articulated_pose": "masked in M-S0 pending audited PCA-to-axis-angle conversion",
+    "dexycb_betas": "masked in M-S0 pending calibration-to-model convention audit",
+    "freihand_final_three_mano_values": "uv_root_x, uv_root_y, scale; excluded from xyz translation supervision",
+    "camera_reprojection": "pred_keypoints_2d is the weak-camera projection of MANO joints, so visible_joints_2d_l1 is the single non-duplicated reprojection term",
+    "absolute_root_depth_target": false
+  },
+  "scope": {
+    "purpose": "loader, mask, loss, gradient, projection, checkpoint and strict-reload smoke only",
+    "not_for_accuracy_conclusions": true,
+    "final_e4_forbidden": true,
+    "reused_e3_forbidden": true
+  }
+}

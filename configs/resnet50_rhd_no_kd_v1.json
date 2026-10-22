@@ -1,0 +1,65 @@
+{
+  "protocol": "fasthamer_resnet50_rhd_no_kd_v1",
+  "seed": 42,
+  "dataset": "artifacts/rhd_full_r0_20261020_01",
+  "image_size": 256,
+  "crop_rescale": 2.0,
+  "backbone": "torchvision_resnet50_imagenet1k_v2",
+  "head": "Fast-HaMeR MANO transformer decoder",
+  "teacher": null,
+  "kd": false,
+  "adversarial": false,
+  "optimizer": "AdamW",
+  "lr": 0.00001,
+  "weight_decay": 0.0001,
+  "batch_size": 32,
+  "workers": 8,
+  "clip_grad_norm": 1.0,
+  "loss_weights": {
+    "joints3d_wrist_relative_l1": 0.05,
+    "visible_joints2d_l1": 0.01,
+    "global_orient": 0.0,
+    "hand_pose": 0.0,
+    "betas": 0.0,
+    "adversarial": 0.0,
+    "kd_output": 0.0,
+    "kd_feature": 0.0
+  },
+  "augmentation": {
+    "scale_factor": 0.3,
+    "rotation_factor_deg": 30.0,
+    "translation_factor": 0.02,
+    "color_scale": 0.2,
+    "rotation_rate": 0.6,
+    "translation_rate": 0.5,
+    "horizontal_flip": false
+  },
+  "positive_camera": {
+    "transform": "softplus(raw_scale)+0.05",
+    "minimum_scale": 0.05,
+    "initial_output_scale": 8.0
+  },
+  "head_initialization": {
+    "readout": "xavier_uniform",
+    "gain": 0.01,
+    "bias": 0.0,
+    "mano_mean_pose_shape": true
+  },
+  "smoke_updates": 500,
+  "smoke_snapshots": [0, 100, 250, 500],
+  "formal_epochs": 30,
+  "formal_min_epochs": 10,
+  "early_stopping_patience_evals": 6,
+  "dev_selection": [
+    "wrist_relative_mpjpe_mm",
+    "visible_2d_epe_px",
+    "fingertip_wrist_relative_error_mm",
+    "failure_rate"
+  ],
+  "selection_tie_tolerance": {
+    "wrist_relative_mpjpe_mm": 0.01,
+    "visible_2d_epe_px": 0.01,
+    "fingertip_wrist_relative_error_mm": 0.01
+  },
+  "final_e3_is_never_used_for_training_or_checkpoint_selection": true
+}

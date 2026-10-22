@@ -1,0 +1,22 @@
+{
+  "stage": "M-S1",
+  "stop_reason": "budget_completed",
+  "last_step": 10000,
+  "best_step": 9000,
+  "checkpoint_hashes": {
+    "last.pt": "e1ae9fd6458290b26b95a9a56e5e40eae15e84e0b39d7ec94eee437692c8ad03",
+    "best_dev.pt": "1d0457e066cbd2057d7492eafb25a17dc4b0d086f4a0fdb79346baedc3331a89"
+  },
+  "strict_reload": {
+    "last.pt": {
+      "strict_load": true,
+      "repeat_forward_max_error": 0.0
+    },
+    "best_dev.pt": {
+      "strict_load": true,
+      "repeat_forward_max_error": 0.0
+    }
+  },
+  "forbidden_actions_executed": [],
+  "m_s2_started": false
+}

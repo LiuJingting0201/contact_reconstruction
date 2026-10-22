@@ -1,0 +1,111 @@
+{
+  "protocol": "real_mixed_no_kd_m_s1_subject02_frozen_v1",
+  "stage": "M-S1",
+  "seed": 20261021,
+  "model": {
+    "image_size": 256,
+    "backbone": "torchvision_resnet50",
+    "backbone_initialization": "ImageNet1K_V2",
+    "head": "Fast-HaMeR MANO transformer decoder",
+    "head_initialization": "new",
+    "teacher": false,
+    "knowledge_distillation": false,
+    "adversarial_loss": false,
+    "rhd_checkpoint_initialization": false
+  },
+  "datasets": {
+    "dexycb_train": "inputs/dexycb_m_s1/20200813-subject-02",
+    "dexycb_dev": "inputs/dexycb_m_s1/20200928-subject-07",
+    "freihand": "inputs/freihand_v2",
+    "rhd_train": "artifacts/rhd_full_r0_20261020_01/train.npz",
+    "rhd_dev": "artifacts/rhd_full_r0_20261020_01/dev.npz",
+    "rhd_images": "inputs/rhd"
+  },
+  "final_manifest_roots": [
+    "inputs/dexycb_final_e4/20201002-subject-08",
+    "inputs/dexycb_final_e4/20201015-subject-09"
+  ],
+  "split_dir": "artifacts/m_s1_frozen_splits_20261021_01",
+  "audit_dir": "artifacts/m_s1_coordinate_audit_20261021_01",
+  "batch_composition": {"dexycb": 16, "freihand": 10, "rhd": 4},
+  "training": {
+    "updates": 10000,
+    "workers": 8,
+    "eval_workers": 4,
+    "learning_rate": 0.00003,
+    "optimizer": "AdamW",
+    "betas": [0.9, 0.999],
+    "eps": 1e-8,
+    "weight_decay": 0.0001,
+    "warmup_updates": 500,
+    "schedule": "linear warmup then cosine decay",
+    "minimum_lr_fraction": 0.1,
+    "clip_grad_norm": 1.0,
+    "eval_interval": 1000,
+    "eval_batch_size": 64,
+    "gradient_log_interval": 500,
+    "patience_evaluations": 5,
+    "min_improvement_mm": 0.1,
+    "collapse_threshold_px": 5,
+    "collapse_stop_consecutive_evaluations": 2,
+    "selection": "minimum full DexYCB subject07 dev wrist-relative MPJPE, only if all domains have zero failure",
+    "initial_step_zero_counts_toward_collapse_patience": true,
+    "full_available_training_pool": true,
+    "train_diagnostic_samples_per_domain": 256,
+    "train_diagnostic_for_selection": false
+  },
+  "augmentation": {
+    "dexycb_crop_rescale": 2.0,
+    "dexycb_scale_factor": 0.2,
+    "dexycb_translation_factor": 0.03,
+    "color_scale": 0.2,
+    "freihand_background_replace_rate": 0.75
+  },
+  "positive_camera": {"minimum_scale": 0.05, "initial_output_scale": 8.0},
+  "losses": {
+    "visible_joints_2d_l1": 1.0,
+    "wrist_relative_joints_3d_l1": 5.0,
+    "fingertip_wrist_relative_3d_l1": 5.0,
+    "bone_direction_angular": 0.25,
+    "global_orient_geodesic": 0.5,
+    "articulated_pose_geodesic": 0.5,
+    "betas_l2": 0.001
+  },
+  "label_policy": {
+    "missing_labels": "masked, never valid zero labels",
+    "dexycb_articulated_pose": "masked pending independent PCA convention audit",
+    "dexycb_betas": "masked pending independent subject-beta convention audit",
+    "freihand_final_three": "uv_root_x, uv_root_y, scale; not translation",
+    "2d_visibility": "annotation-valid and inside crop; FreiHAND projected XYZ has no independent occlusion labels",
+    "global_orientation": "only nonmissing finite MANO global rotation",
+    "absolute_root_depth_target": false
+  },
+  "baseline_checkpoint": "artifacts/resnet50_rhd_r2_formal_20261020_01/best_dev.pt",
+  "baseline_sha256": "95dd65e7724f1fbef33ec8b2fcf9f491c948d990061fc67d0f533e73ce32ea0a",
+  "gate": {
+    "historical_wrist_mpjpe_mm": 32.119,
+    "historical_fingertip_mm": 43.076,
+    "historical_2d_epe_px": 15.712,
+    "minimum_relative_improvement": 0.1,
+    "paired_sequence_bootstrap_replicates": 2000,
+    "paired_sequence_bootstrap_confidence": 0.95,
+    "maximum_failure_rate": 0.001,
+    "severe_domain_regression_fraction": 0.25,
+    "stable_2d_trend": "last three dev 2D evaluations nonincreasing"
+  },
+  "scope": {
+    "final_e4_forbidden": true,
+    "reused_e3_forbidden": true,
+    "kd_forbidden": true,
+    "b2_tuning_forbidden": true,
+    "m_s2_execution_forbidden": true,
+    "stop_after_m_s1": true
+  },
+  "historical_smoke_failure": {
+    "run": "resnet50_real_mixed_m_s0_subject02_20261021_01",
+    "step": 100,
+    "domain": "freihand",
+    "projection_collapse_rate": 0.09375,
+    "interpretation": "plumbing diagnostic only; retained even after later recovery"
+  }
+}

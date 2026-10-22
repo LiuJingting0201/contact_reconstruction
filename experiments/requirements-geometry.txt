@@ -1,0 +1,3 @@
+# CPU geometry validation; Python 3.9, macOS arm64 tested.
+numpy==1.26.4
+scipy==1.13.1

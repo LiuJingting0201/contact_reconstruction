@@ -1,0 +1,12 @@
+{
+  "step": 10000,
+  "best_step": 10000,
+  "best_mpjpe": 30.660593032836914,
+  "stale_evaluations": 0,
+  "collapse_streak": {
+    "dexycb": 0,
+    "freihand": 0,
+    "rhd": 0
+  },
+  "any_domain_collapse_streak": 0
+}

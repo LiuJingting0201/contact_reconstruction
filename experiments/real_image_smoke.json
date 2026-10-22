@@ -1,0 +1,23 @@
+{
+  "id": "real_image_smoke_v1",
+  "source_image": "repos/hamer/example_data/test1.jpg",
+  "box_xyxy": [253, 151, 388, 342],
+  "right_hand": true,
+  "bbox_source": "manually selected visible right hand; no keypoint ground truth",
+  "crop_rescale": 2.0,
+  "seed": 42,
+  "focal_cfg_values": [500.0, 5000.0],
+  "device": "cuda:0",
+  "physical_gpu": 1,
+  "train_smoke": {
+    "data_source": "one real crop and frozen HaMeR pseudo labels",
+    "purpose": "training/backprop/checkpoint smoke only; not no-KD ground-truth baseline",
+    "steps": 20,
+    "batch_size": 2,
+    "lr": 0.00001,
+    "weight_decay": 0.0001,
+    "precision": "float32",
+    "weights": {"joints3d": 0.05, "joints2d": 0.01, "pose": 0.001, "shape": 0.0005},
+    "clip_grad_norm": 1.0
+  }
+}

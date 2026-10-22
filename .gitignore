@@ -1,0 +1,41 @@
+# Local environments and caches
+.venv*/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.DS_Store
+
+# Local debugging and runtime state
+.dbg/
+logs/
+*.log
+*.pid
+
+# Datasets, model sources, and vendored dependencies
+inputs/
+repos/
+vendor/
+
+# Generated experiment outputs are local by default. Curated summaries are
+# force-added explicitly when they are suitable for publication.
+artifacts/
+
+# Model and per-sample prediction payloads
+*.pt
+*.pth
+*.ckpt
+*.npz
+*.npy
+
+# Archives and partial downloads
+*.tar
+*.tar.gz
+*.tgz
+*.zip
+*.part
+
+# Internal source material is not part of the public experiment record.
+docs/reference/
+docs/dyn_hamr_reproduction_protocol.md

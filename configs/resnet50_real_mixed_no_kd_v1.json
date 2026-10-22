@@ -1,0 +1,99 @@
+{
+  "protocol": "real_mixed_no_kd_v1",
+  "seed": 20261021,
+  "model": {
+    "backbone": "torchvision_resnet50",
+    "backbone_initialization": "ImageNet1K_V2",
+    "head": "Fast-HaMeR MANO transformer decoder",
+    "head_initialization": "new",
+    "image_size": 256,
+    "teacher": false,
+    "knowledge_distillation": false,
+    "adversarial_loss": false,
+    "rhd_checkpoint_initialization": false
+  },
+  "subject_protocol": {
+    "dexycb_train": [
+      "20200813-subject-02",
+      "20200820-subject-03",
+      "20200903-subject-04",
+      "20200908-subject-05",
+      "20200918-subject-06"
+    ],
+    "dexycb_dev": [
+      "20200928-subject-07"
+    ],
+    "dexycb_final_e4": [
+      "20201002-subject-08",
+      "20201015-subject-09"
+    ],
+    "reused_e3_diagnostic_only": [
+      "20200709-subject-01"
+    ],
+    "official_reference": "DexYCB s1 unseen-subject split, modified only to exclude reused subject-01 from training"
+  },
+  "sampling": {
+    "preregistered_target": {
+      "dexycb": 0.4,
+      "freihand": 0.25,
+      "ho3d_or_h2o3d": 0.15,
+      "interhand_single": 0.1,
+      "rhd": 0.1
+    },
+    "first_round_available_renormalized": {
+      "dexycb": 0.5333333333333333,
+      "freihand": 0.3333333333333333,
+      "rhd": 0.1333333333333333
+    },
+    "renormalization_reason": "HO3D/H2O3D and InterHand images exceed the current verified storage budget; unavailable datasets are not represented by placeholders.",
+    "max_synthetic_fraction": 0.1333333333333333,
+    "subject_sequence_aware": true,
+    "left_right_balanced_where_available": true,
+    "occlusion_buckets": true,
+    "pose_diversity_buckets": true
+  },
+  "losses": {
+    "visible_joints_2d_l1": 1.0,
+    "wrist_relative_joints_3d_l1": 5.0,
+    "fingertip_wrist_relative_3d_l1": 5.0,
+    "bone_direction_angular": 0.25,
+    "global_orient_geodesic": 0.5,
+    "articulated_pose_geodesic": 0.5,
+    "betas_l2": 0.001,
+    "camera_reprojection_l1": 1.0
+  },
+  "loss_rules": {
+    "missing_labels": "masked out, never replaced by valid zero labels",
+    "normalization": "each term normalized by its own valid scalar count",
+    "absolute_root_depth_target": false,
+    "log_effective_sample_counts": true,
+    "log_component_gradient_norms": true
+  },
+  "optimizer": {
+    "name": "AdamW",
+    "learning_rate": 0.0001,
+    "weight_decay": 0.0001
+  },
+  "stages": {
+    "m_s0_updates": 500,
+    "m_s1_updates": 10000,
+    "m_s1_eval_interval": 1000,
+    "m_s1_patience_evaluations": 5,
+    "m_s2_enabled_only_after_gate": true
+  },
+  "selection_metric_priority": [
+    "wrist_relative_mpjpe_mm",
+    "fingertip_wrist_relative_error_mm",
+    "global_orientation_error_deg",
+    "visible_2d_epe_px",
+    "failure_rate"
+  ],
+  "frozen_b2": {
+    "nominal_focal": 5000,
+    "real_K_R_t": true,
+    "views": 2,
+    "objective": "Huber reprojection",
+    "optimized_parameters": "translation only",
+    "forbid_retuning": true
+  }
+}

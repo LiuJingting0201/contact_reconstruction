@@ -1,0 +1,24 @@
+{
+  "protocol": "real_e2_pose_preserving_preregistered_v1",
+  "seed": 42,
+  "steps": 800,
+  "source_run": "artifacts/dex_real_e2_matrix_20261020_02",
+  "orientation_anchor": "lambda * geodesic(R,R_initial)^2, radians squared, stable atan2",
+  "legacy_prior": "Preserve original 0.1 * mean((all_16_rotation_matrices - initial)^2). Explicit legacy prior; new orientation anchor is SO(3), not matrix MSE. In B9 this legacy prior only penalizes articulated rotations.",
+  "reprojection": "original per-view normalized loss with 3px scale; no GT observations",
+  "timing": "new runs instantiate MANO only, no teacher; reused runtime remains historical, resident-memory scopes differ",
+  "selection": "zero numerical/depth failures; quality <=1/32; abs mean <=12mm and wrist-relative mean <=8mm; prefer B2 if eligible; otherwise report Pareto frontier when no joint-feasible solution",
+  "variants": [
+    {"id":"B0","reuse":"E2-0","variables":"none","views":[0,1],"loss":"l2","lambda_rot":0},
+    {"id":"B1","variables":"translation","views":[0],"loss":"huber","lambda_rot":0},
+    {"id":"B2","variables":"translation","views":[0,1],"loss":"huber","lambda_rot":0},
+    {"id":"B3","variables":"translation","views":[0,1],"loss":"l2","lambda_rot":0},
+    {"id":"B4","reuse":"E2-4","variables":"orientation","views":[0,1],"loss":"huber","lambda_rot":0},
+    {"id":"B5","variables":"orientation","views":[0,1],"loss":"huber","lambda_rot":0.001},
+    {"id":"B6","variables":"orientation","views":[0,1],"loss":"huber","lambda_rot":0.01},
+    {"id":"B7","variables":"orientation","views":[0,1],"loss":"huber","lambda_rot":0.1},
+    {"id":"B8","variables":"orientation","views":[0,1],"loss":"huber","lambda_rot":1.0},
+    {"id":"B9","variables":"fingers","views":[0,1],"loss":"huber","lambda_rot":0},
+    {"id":"B10","reuse":"E2-7","variables":"pose","views":[0,1],"loss":"huber","lambda_rot":0}
+  ]
+}

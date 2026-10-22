@@ -1,0 +1,310 @@
+{
+  "question": "Does real mixed training improve geometry and 2D on independent real dev?",
+  "all_three_real_dev_errors_lower_than_same_dev_baseline": {
+    "source": true,
+    "correction": true
+  },
+  "split_files_identical": true,
+  "training_settings_identical_except_sampler": true,
+  "samplers": {
+    "source": {
+      "dexycb": 16,
+      "freihand": 10,
+      "rhd": 4
+    },
+    "correction": {
+      "dexycb": 12,
+      "freihand": 10,
+      "rhd": 8
+    }
+  },
+  "relative_improvement_percent": {
+    "source": {
+      "dexycb": {
+        "wrist_relative_mpjpe_mm": 51.0668235742308,
+        "fingertip_wrist_relative_error_mm": 48.964873594134374,
+        "visible_2d_epe_px": 30.917262352089015
+      },
+      "freihand": {
+        "wrist_relative_mpjpe_mm": 51.51879158980075,
+        "fingertip_wrist_relative_error_mm": 44.21263169593044,
+        "visible_2d_epe_px": 25.045970757945778
+      },
+      "rhd": {
+        "wrist_relative_mpjpe_mm": -30.827223317658348,
+        "fingertip_wrist_relative_error_mm": -26.48144005670452,
+        "visible_2d_epe_px": -54.05076913729878
+      }
+    },
+    "correction": {
+      "dexycb": {
+        "wrist_relative_mpjpe_mm": 52.33535113424503,
+        "fingertip_wrist_relative_error_mm": 50.20742501704065,
+        "visible_2d_epe_px": 32.69089413958428
+      },
+      "freihand": {
+        "wrist_relative_mpjpe_mm": 52.6802833031706,
+        "fingertip_wrist_relative_error_mm": 45.08995113000942,
+        "visible_2d_epe_px": 27.1647195306306
+      },
+      "rhd": {
+        "wrist_relative_mpjpe_mm": -19.86701080859339,
+        "fingertip_wrist_relative_error_mm": -16.545184818364355,
+        "visible_2d_epe_px": -44.81548904735837
+      }
+    }
+  },
+  "selected_checkpoint_train_dev_diagnostic_gaps": {
+    "source": {
+      "dexycb": {
+        "wrist_relative_mpjpe_mm": {
+          "train_diagnostic": 10.35000991821289,
+          "full_dev": 31.476581573486328,
+          "dev_minus_train_diagnostic": 21.126571655273438
+        },
+        "fingertip_wrist_relative_error_mm": {
+          "train_diagnostic": 15.310908317565918,
+          "full_dev": 43.150901794433594,
+          "dev_minus_train_diagnostic": 27.839993476867676
+        },
+        "visible_2d_epe_px": {
+          "train_diagnostic": 10.611173629760742,
+          "full_dev": 20.17037582397461,
+          "dev_minus_train_diagnostic": 9.559202194213867
+        }
+      },
+      "freihand": {
+        "wrist_relative_mpjpe_mm": {
+          "train_diagnostic": 25.365751266479492,
+          "full_dev": 26.82915496826172,
+          "dev_minus_train_diagnostic": 1.4634037017822266
+        },
+        "fingertip_wrist_relative_error_mm": {
+          "train_diagnostic": 40.501007080078125,
+          "full_dev": 42.66429138183594,
+          "dev_minus_train_diagnostic": 2.1632843017578125
+        },
+        "visible_2d_epe_px": {
+          "train_diagnostic": 13.758506774902344,
+          "full_dev": 14.596991539001465,
+          "dev_minus_train_diagnostic": 0.8384847640991211
+        }
+      },
+      "rhd": {
+        "wrist_relative_mpjpe_mm": {
+          "train_diagnostic": 36.45037078857422,
+          "full_dev": 42.02029037475586,
+          "dev_minus_train_diagnostic": 5.569919586181641
+        },
+        "fingertip_wrist_relative_error_mm": {
+          "train_diagnostic": 47.168312072753906,
+          "full_dev": 54.48366165161133,
+          "dev_minus_train_diagnostic": 7.315349578857422
+        },
+        "visible_2d_epe_px": {
+          "train_diagnostic": 15.419211387634277,
+          "full_dev": 24.20529556274414,
+          "dev_minus_train_diagnostic": 8.786084175109863
+        }
+      }
+    },
+    "correction": {
+      "dexycb": {
+        "wrist_relative_mpjpe_mm": {
+          "train_diagnostic": 11.120503425598145,
+          "full_dev": 30.660593032836914,
+          "dev_minus_train_diagnostic": 19.54008960723877
+        },
+        "fingertip_wrist_relative_error_mm": {
+          "train_diagnostic": 16.47274398803711,
+          "full_dev": 42.10030746459961,
+          "dev_minus_train_diagnostic": 25.6275634765625
+        },
+        "visible_2d_epe_px": {
+          "train_diagnostic": 10.83263874053955,
+          "full_dev": 19.65252113342285,
+          "dev_minus_train_diagnostic": 8.8198823928833
+        }
+      },
+      "freihand": {
+        "wrist_relative_mpjpe_mm": {
+          "train_diagnostic": 24.846668243408203,
+          "full_dev": 26.18639373779297,
+          "dev_minus_train_diagnostic": 1.3397254943847656
+        },
+        "fingertip_wrist_relative_error_mm": {
+          "train_diagnostic": 40.06114959716797,
+          "full_dev": 41.99334716796875,
+          "dev_minus_train_diagnostic": 1.9321975708007812
+        },
+        "visible_2d_epe_px": {
+          "train_diagnostic": 13.433785438537598,
+          "full_dev": 14.18437385559082,
+          "dev_minus_train_diagnostic": 0.7505884170532227
+        }
+      },
+      "rhd": {
+        "wrist_relative_mpjpe_mm": {
+          "train_diagnostic": 32.37274932861328,
+          "full_dev": 38.4999885559082,
+          "dev_minus_train_diagnostic": 6.127239227294922
+        },
+        "fingertip_wrist_relative_error_mm": {
+          "train_diagnostic": 42.11623764038086,
+          "full_dev": 50.2034797668457,
+          "dev_minus_train_diagnostic": 8.087242126464844
+        },
+        "visible_2d_epe_px": {
+          "train_diagnostic": 14.013328552246094,
+          "full_dev": 22.75419807434082,
+          "dev_minus_train_diagnostic": 8.740869522094727
+        }
+      }
+    }
+  },
+  "descriptive_dexycb_2d_paired_comparison": {
+    "source": {
+      "mean_paired_delta_px": -9.027045554310591,
+      "sequence_cluster_bootstrap_95pct_ci": [
+        -9.848227938931338,
+        -8.212893744248833
+      ],
+      "clusters": 100,
+      "replicates": 2000,
+      "interpretation": "Descriptive, post-selection; one dev subject, no subject-level CI."
+    },
+    "correction": {
+      "mean_paired_delta_px": -9.544904880546964,
+      "sequence_cluster_bootstrap_95pct_ci": [
+        -10.286587084204058,
+        -8.813751869751295
+      ],
+      "clusters": 100,
+      "replicates": 2000,
+      "interpretation": "Descriptive, post-selection; one dev subject, no subject-level CI."
+    }
+  },
+  "runs": {
+    "source": {
+      "path": "artifacts/resnet50_real_mixed_m_s1_subject02_20261021_01",
+      "completion": {
+        "stage": "M-S1",
+        "stop_reason": "budget_completed",
+        "last_step": 10000,
+        "best_step": 9000,
+        "checkpoint_hashes": {
+          "last.pt": "e1ae9fd6458290b26b95a9a56e5e40eae15e84e0b39d7ec94eee437692c8ad03",
+          "best_dev.pt": "1d0457e066cbd2057d7492eafb25a17dc4b0d086f4a0fdb79346baedc3331a89"
+        },
+        "strict_reload": {
+          "last.pt": {
+            "strict_load": true,
+            "repeat_forward_max_error": 0.0
+          },
+          "best_dev.pt": {
+            "strict_load": true,
+            "repeat_forward_max_error": 0.0
+          }
+        },
+        "forbidden_actions_executed": [],
+        "m_s2_started": false
+      },
+      "m_s2_eligible": false,
+      "gate_flags": {
+        "wrist_below_historical_by_10pct": false,
+        "tips_below_historical_by_10pct": false,
+        "wrist_same_dev_paired_ci_below_zero": true,
+        "tips_same_dev_paired_ci_below_zero": true,
+        "2d_improved_or_stably_decreasing": true,
+        "all_domain_failure_at_most_0_1pct": true,
+        "no_collapse_stop": true,
+        "no_nonfinite_stop": true,
+        "dev_geometry_improved_from_initial": true,
+        "real_dev_last_three_evaluations_improving": true,
+        "no_severe_domain_imbalance": false
+      },
+      "domain_imbalance": [
+        {
+          "domain": "rhd",
+          "metric": "wrist_relative_mpjpe_mm",
+          "baseline": 32.118919372558594,
+          "best_dev": 42.02029037475586
+        },
+        {
+          "domain": "rhd",
+          "metric": "fingertip_wrist_relative_error_mm",
+          "baseline": 43.07640838623047,
+          "best_dev": 54.48366165161133
+        },
+        {
+          "domain": "rhd",
+          "metric": "visible_2d_epe_px",
+          "baseline": 15.712544441223145,
+          "best_dev": 24.20529556274414
+        }
+      ],
+      "train_collapse_summary": {
+        "affected_updates": 18,
+        "first_update": 281,
+        "last_update": 581,
+        "maximum_batch_rate": 0.06666667014360428,
+        "raw_evidence": "steps.jsonl; retained independently of later dev recovery"
+      }
+    },
+    "correction": {
+      "path": "artifacts/resnet50_real_mixed_m_s1_sampler_correction_20261021_01",
+      "completion": {
+        "stage": "M-S1",
+        "stop_reason": "budget_completed",
+        "last_step": 10000,
+        "best_step": 10000,
+        "checkpoint_hashes": {
+          "last.pt": "4416633ceec579725fa39678a64fbd95b2ad0f034e1d52e97ad857cbc353ca09",
+          "best_dev.pt": "74e2e2a287cc4fd4e83c7f98414ce46a618fbb474e56dff4bcd285f0e4296795"
+        },
+        "strict_reload": {
+          "last.pt": {
+            "strict_load": true,
+            "repeat_forward_max_error": 0.0
+          },
+          "best_dev.pt": {
+            "strict_load": true,
+            "repeat_forward_max_error": 0.0
+          }
+        },
+        "forbidden_actions_executed": [],
+        "m_s2_started": false
+      },
+      "m_s2_eligible": false,
+      "gate_flags": {
+        "wrist_below_historical_by_10pct": false,
+        "tips_below_historical_by_10pct": false,
+        "wrist_same_dev_paired_ci_below_zero": true,
+        "tips_same_dev_paired_ci_below_zero": true,
+        "2d_improved_or_stably_decreasing": true,
+        "all_domain_failure_at_most_0_1pct": true,
+        "no_collapse_stop": true,
+        "no_nonfinite_stop": true,
+        "dev_geometry_improved_from_initial": true,
+        "real_dev_last_three_evaluations_improving": false,
+        "no_severe_domain_imbalance": false
+      },
+      "domain_imbalance": [
+        {
+          "domain": "rhd",
+          "metric": "visible_2d_epe_px",
+          "baseline": 15.712544441223145,
+          "best_dev": 22.75419807434082
+        }
+      ],
+      "train_collapse_summary": {
+        "affected_updates": 14,
+        "first_update": 302,
+        "last_update": 767,
+        "maximum_batch_rate": 0.03333333507180214,
+        "raw_evidence": "steps.jsonl; retained independently of later dev recovery"
+      }
+    }
+  },
+  "further_training_started": false
+}

@@ -1,0 +1,17 @@
+{
+  "run_id": "rhd_supervised_v5_long",
+  "seed": 42,
+  "subset_counts": {"training": 128, "evaluation": 32},
+  "image_size": 256,
+  "crop_rescale": 2.0,
+  "steps": 1000,
+  "batch_size": 8,
+  "eval_interval": 200,
+  "lr": 0.00001,
+  "weight_decay": 0.0001,
+  "clip_grad_norm": 1.0,
+  "weights": {"joints3d": 1.0, "joints2d": 0.1, "shape_prior": 0.000005},
+  "positive_camera": true,
+  "head_init": {"xavier_gain": 0.01, "zero_readout_bias": true, "weak_camera": [8.0, 0.0, 0.0]},
+  "scope": "RHD development subset; GT boxes, right hands, no KD/augmentation. Fresh seed-42 initialization and 1000 fixed updates; exploratory longer optimization, not independent test."
+}

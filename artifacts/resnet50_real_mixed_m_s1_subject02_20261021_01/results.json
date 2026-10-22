@@ -1,0 +1,2116 @@
+{
+  "question": "Does real mixed training substantially improve ResNet geometry and 2D on independent real dev?",
+  "m_s2_eligible": false,
+  "gate_flags": {
+    "wrist_below_historical_by_10pct": false,
+    "tips_below_historical_by_10pct": false,
+    "wrist_same_dev_paired_ci_below_zero": true,
+    "tips_same_dev_paired_ci_below_zero": true,
+    "2d_improved_or_stably_decreasing": true,
+    "all_domain_failure_at_most_0_1pct": true,
+    "no_collapse_stop": true,
+    "no_nonfinite_stop": true,
+    "dev_geometry_improved_from_initial": true,
+    "real_dev_last_three_evaluations_improving": true,
+    "no_severe_domain_imbalance": false
+  },
+  "paired_same_dev_comparison": {
+    "wrist_relative_mpjpe_mm": {
+      "mean_paired_delta": -32.84905242919922,
+      "sequence_cluster_bootstrap_95pct_ci": [
+        -34.73393541267921,
+        -31.003024452900537
+      ],
+      "clusters": 100,
+      "replicates": 2000
+    },
+    "fingertip_wrist_relative_error_mm": {
+      "mean_paired_delta": -41.400474548339844,
+      "sequence_cluster_bootstrap_95pct_ci": [
+        -43.75358448994273,
+        -39.15525589534445
+      ],
+      "clusters": 100,
+      "replicates": 2000
+    }
+  },
+  "domain_imbalance": [
+    {
+      "domain": "rhd",
+      "metric": "wrist_relative_mpjpe_mm",
+      "baseline": 32.118919372558594,
+      "best_dev": 42.02029037475586
+    },
+    {
+      "domain": "rhd",
+      "metric": "fingertip_wrist_relative_error_mm",
+      "baseline": 43.07640838623047,
+      "best_dev": 54.48366165161133
+    },
+    {
+      "domain": "rhd",
+      "metric": "visible_2d_epe_px",
+      "baseline": 15.712544441223145,
+      "best_dev": 24.20529556274414
+    }
+  ],
+  "domain_imbalance_history": [
+    {
+      "step": 1000,
+      "domain_imbalance": [
+        {
+          "domain": "rhd",
+          "metric": "wrist_relative_mpjpe_mm",
+          "observed": 56.78974914550781,
+          "baseline": 32.118919372558594
+        },
+        {
+          "domain": "rhd",
+          "metric": "fingertip_wrist_relative_error_mm",
+          "observed": 72.62127685546875,
+          "baseline": 43.07640838623047
+        },
+        {
+          "domain": "rhd",
+          "metric": "visible_2d_epe_px",
+          "observed": 35.45500183105469,
+          "baseline": 15.712544441223145
+        }
+      ],
+      "cumulative_domain_exposures": {
+        "dexycb": 16000,
+        "freihand": 10000,
+        "rhd": 4000
+      },
+      "action": "retain frozen sampler for this registered run; diagnose and register a sampler correction if persistent"
+    },
+    {
+      "step": 2000,
+      "domain_imbalance": [
+        {
+          "domain": "rhd",
+          "metric": "wrist_relative_mpjpe_mm",
+          "observed": 51.24040222167969,
+          "baseline": 32.118919372558594
+        },
+        {
+          "domain": "rhd",
+          "metric": "fingertip_wrist_relative_error_mm",
+          "observed": 63.817474365234375,
+          "baseline": 43.07640838623047
+        },
+        {
+          "domain": "rhd",
+          "metric": "visible_2d_epe_px",
+          "observed": 33.2115592956543,
+          "baseline": 15.712544441223145
+        }
+      ],
+      "cumulative_domain_exposures": {
+        "dexycb": 32000,
+        "freihand": 20000,
+        "rhd": 8000
+      },
+      "action": "retain frozen sampler for this registered run; diagnose and register a sampler correction if persistent"
+    },
+    {
+      "step": 3000,
+      "domain_imbalance": [
+        {
+          "domain": "rhd",
+          "metric": "wrist_relative_mpjpe_mm",
+          "observed": 46.989540100097656,
+          "baseline": 32.118919372558594
+        },
+        {
+          "domain": "rhd",
+          "metric": "fingertip_wrist_relative_error_mm",
+          "observed": 60.671974182128906,
+          "baseline": 43.07640838623047
+        },
+        {
+          "domain": "rhd",
+          "metric": "visible_2d_epe_px",
+          "observed": 29.927749633789062,
+          "baseline": 15.712544441223145
+        }
+      ],
+      "cumulative_domain_exposures": {
+        "dexycb": 48000,
+        "freihand": 30000,
+        "rhd": 12000
+      },
+      "action": "retain frozen sampler for this registered run; diagnose and register a sampler correction if persistent"
+    },
+    {
+      "step": 4000,
+      "domain_imbalance": [
+        {
+          "domain": "rhd",
+          "metric": "wrist_relative_mpjpe_mm",
+          "observed": 45.67127990722656,
+          "baseline": 32.118919372558594
+        },
+        {
+          "domain": "rhd",
+          "metric": "fingertip_wrist_relative_error_mm",
+          "observed": 57.7742919921875,
+          "baseline": 43.07640838623047
+        },
+        {
+          "domain": "rhd",
+          "metric": "visible_2d_epe_px",
+          "observed": 27.524385452270508,
+          "baseline": 15.712544441223145
+        }
+      ],
+      "cumulative_domain_exposures": {
+        "dexycb": 64000,
+        "freihand": 40000,
+        "rhd": 16000
+      },
+      "action": "retain frozen sampler for this registered run; diagnose and register a sampler correction if persistent"
+    },
+    {
+      "step": 5000,
+      "domain_imbalance": [
+        {
+          "domain": "rhd",
+          "metric": "wrist_relative_mpjpe_mm",
+          "observed": 44.339176177978516,
+          "baseline": 32.118919372558594
+        },
+        {
+          "domain": "rhd",
+          "metric": "fingertip_wrist_relative_error_mm",
+          "observed": 57.59058380126953,
+          "baseline": 43.07640838623047
+        },
+        {
+          "domain": "rhd",
+          "metric": "visible_2d_epe_px",
+          "observed": 26.768482208251953,
+          "baseline": 15.712544441223145
+        }
+      ],
+      "cumulative_domain_exposures": {
+        "dexycb": 80000,
+        "freihand": 50000,
+        "rhd": 20000
+      },
+      "action": "retain frozen sampler for this registered run; diagnose and register a sampler correction if persistent"
+    },
+    {
+      "step": 6000,
+      "domain_imbalance": [
+        {
+          "domain": "rhd",
+          "metric": "wrist_relative_mpjpe_mm",
+          "observed": 43.28883743286133,
+          "baseline": 32.118919372558594
+        },
+        {
+          "domain": "rhd",
+          "metric": "fingertip_wrist_relative_error_mm",
+          "observed": 56.18482971191406,
+          "baseline": 43.07640838623047
+        },
+        {
+          "domain": "rhd",
+          "metric": "visible_2d_epe_px",
+          "observed": 28.129335403442383,
+          "baseline": 15.712544441223145
+        }
+      ],
+      "cumulative_domain_exposures": {
+        "dexycb": 96000,
+        "freihand": 60000,
+        "rhd": 24000
+      },
+      "action": "retain frozen sampler for this registered run; diagnose and register a sampler correction if persistent"
+    },
+    {
+      "step": 7000,
+      "domain_imbalance": [
+        {
+          "domain": "rhd",
+          "metric": "wrist_relative_mpjpe_mm",
+          "observed": 42.43299102783203,
+          "baseline": 32.118919372558594
+        },
+        {
+          "domain": "rhd",
+          "metric": "fingertip_wrist_relative_error_mm",
+          "observed": 53.86576843261719,
+          "baseline": 43.07640838623047
+        },
+        {
+          "domain": "rhd",
+          "metric": "visible_2d_epe_px",
+          "observed": 25.49444007873535,
+          "baseline": 15.712544441223145
+        }
+      ],
+      "cumulative_domain_exposures": {
+        "dexycb": 112000,
+        "freihand": 70000,
+        "rhd": 28000
+      },
+      "action": "retain frozen sampler for this registered run; diagnose and register a sampler correction if persistent"
+    },
+    {
+      "step": 8000,
+      "domain_imbalance": [
+        {
+          "domain": "rhd",
+          "metric": "wrist_relative_mpjpe_mm",
+          "observed": 42.009727478027344,
+          "baseline": 32.118919372558594
+        },
+        {
+          "domain": "rhd",
+          "metric": "fingertip_wrist_relative_error_mm",
+          "observed": 54.66532897949219,
+          "baseline": 43.07640838623047
+        },
+        {
+          "domain": "rhd",
+          "metric": "visible_2d_epe_px",
+          "observed": 25.08072280883789,
+          "baseline": 15.712544441223145
+        }
+      ],
+      "cumulative_domain_exposures": {
+        "dexycb": 128000,
+        "freihand": 80000,
+        "rhd": 32000
+      },
+      "action": "retain frozen sampler for this registered run; diagnose and register a sampler correction if persistent"
+    },
+    {
+      "step": 9000,
+      "domain_imbalance": [
+        {
+          "domain": "rhd",
+          "metric": "wrist_relative_mpjpe_mm",
+          "observed": 42.02029037475586,
+          "baseline": 32.118919372558594
+        },
+        {
+          "domain": "rhd",
+          "metric": "fingertip_wrist_relative_error_mm",
+          "observed": 54.48366165161133,
+          "baseline": 43.07640838623047
+        },
+        {
+          "domain": "rhd",
+          "metric": "visible_2d_epe_px",
+          "observed": 24.20529556274414,
+          "baseline": 15.712544441223145
+        }
+      ],
+      "cumulative_domain_exposures": {
+        "dexycb": 144000,
+        "freihand": 90000,
+        "rhd": 36000
+      },
+      "action": "retain frozen sampler for this registered run; diagnose and register a sampler correction if persistent"
+    },
+    {
+      "step": 10000,
+      "domain_imbalance": [
+        {
+          "domain": "rhd",
+          "metric": "wrist_relative_mpjpe_mm",
+          "observed": 41.39775085449219,
+          "baseline": 32.118919372558594
+        },
+        {
+          "domain": "rhd",
+          "metric": "visible_2d_epe_px",
+          "observed": 24.240888595581055,
+          "baseline": 15.712544441223145
+        }
+      ],
+      "cumulative_domain_exposures": {
+        "dexycb": 160000,
+        "freihand": 100000,
+        "rhd": 40000
+      },
+      "action": "retain frozen sampler for this registered run; diagnose and register a sampler correction if persistent"
+    }
+  ],
+  "best": {
+    "tag": "dev_0009000",
+    "domains": {
+      "dexycb": {
+        "count": 47590,
+        "finite_count": 47590,
+        "nonfinite_rate": 0.0,
+        "negative_depth_rate": 0.0,
+        "projection_collapse_rate": 0.0,
+        "failure_rate": 0.0,
+        "projection_span_px": {
+          "min": 65.36643981933594,
+          "median": 123.51214599609375,
+          "p95": 146.99000091552733,
+          "max": 210.60568237304688
+        },
+        "weak_camera_scale": {
+          "min": 4.445911407470703,
+          "median": 7.770838737487793,
+          "p95": 10.231021213531491,
+          "max": 13.095229148864746
+        },
+        "wrist_relative_mpjpe_mm": 31.476581573486328,
+        "rotation_aligned_mpjpe_mm": 10.192122391685533,
+        "fingertip_wrist_relative_error_mm": 43.150901794433594,
+        "per_finger_error_mm": {
+          "thumb": 27.77130699157715,
+          "index": 36.54206848144531,
+          "middle": 34.900848388671875,
+          "ring": 33.349552154541016,
+          "little": 32.688289642333984
+        },
+        "bone_direction_angular_error_deg": 23.277099609375,
+        "visible_2d_epe_px": 20.17037582397461,
+        "visible_2d_count": 997798,
+        "global_orientation_error_deg": 28.483741760253906,
+        "global_orientation_count": 47590
+      },
+      "freihand": {
+        "count": 13164,
+        "finite_count": 13164,
+        "nonfinite_rate": 0.0,
+        "negative_depth_rate": 0.0,
+        "projection_collapse_rate": 0.0,
+        "failure_rate": 0.0,
+        "projection_span_px": {
+          "min": 43.318355560302734,
+          "median": 89.41743469238281,
+          "p95": 109.65924377441407,
+          "max": 141.923095703125
+        },
+        "weak_camera_scale": {
+          "min": 2.8759055137634277,
+          "median": 5.794992923736572,
+          "p95": 7.289091420173644,
+          "max": 8.991302490234375
+        },
+        "wrist_relative_mpjpe_mm": 26.82915496826172,
+        "rotation_aligned_mpjpe_mm": 17.79626243135945,
+        "fingertip_wrist_relative_error_mm": 42.66429138183594,
+        "per_finger_error_mm": {
+          "thumb": 24.07296371459961,
+          "index": 29.470380783081055,
+          "middle": 29.529943466186523,
+          "ring": 29.85287094116211,
+          "little": 27.926910400390625
+        },
+        "bone_direction_angular_error_deg": 31.11237144470215,
+        "visible_2d_epe_px": 14.596991539001465,
+        "visible_2d_count": 276436,
+        "global_orientation_error_deg": 19.58490562438965,
+        "global_orientation_count": 13164
+      },
+      "rhd": {
+        "count": 2751,
+        "finite_count": 2751,
+        "nonfinite_rate": 0.0,
+        "negative_depth_rate": 0.0,
+        "projection_collapse_rate": 0.0,
+        "failure_rate": 0.0,
+        "projection_span_px": {
+          "min": 68.71369171142578,
+          "median": 115.85688781738281,
+          "p95": 136.51031494140625,
+          "max": 191.63497924804688
+        },
+        "weak_camera_scale": {
+          "min": 4.242313385009766,
+          "median": 7.2041521072387695,
+          "p95": 9.071794033050537,
+          "max": 10.613473892211914
+        },
+        "wrist_relative_mpjpe_mm": 42.02029037475586,
+        "rotation_aligned_mpjpe_mm": 18.642119649961913,
+        "fingertip_wrist_relative_error_mm": 54.48366165161133,
+        "per_finger_error_mm": {
+          "thumb": 39.28224563598633,
+          "index": 48.72079086303711,
+          "middle": 46.07545471191406,
+          "ring": 43.24335861206055,
+          "little": 43.284690856933594
+        },
+        "bone_direction_angular_error_deg": 32.80543518066406,
+        "visible_2d_epe_px": 24.20529556274414,
+        "visible_2d_count": 54551,
+        "global_orientation_error_deg": null,
+        "global_orientation_count": 0
+      }
+    },
+    "mixed_aggregate": {
+      "definition": "unweighted macro mean over domains; never used for selection",
+      "wrist_relative_mpjpe_mm": 33.44200897216797,
+      "rotation_aligned_mpjpe_mm": 15.543501491002297,
+      "fingertip_wrist_relative_error_mm": 46.76628494262695,
+      "bone_direction_angular_error_deg": 29.064968744913738,
+      "visible_2d_epe_px": 19.657554308573406,
+      "nonfinite_rate": 0.0,
+      "negative_depth_rate": 0.0,
+      "projection_collapse_rate": 0.0,
+      "failure_rate": 0.0,
+      "pooled_all_metrics": {
+        "count": 63505,
+        "finite_count": 63505,
+        "nonfinite_rate": 0.0,
+        "negative_depth_rate": 0.0,
+        "projection_collapse_rate": 0.0,
+        "failure_rate": 0.0,
+        "projection_span_px": {
+          "min": 43.318355560302734,
+          "median": 118.87434387207031,
+          "p95": 144.59372558593748,
+          "max": 210.60568237304688
+        },
+        "weak_camera_scale": {
+          "min": 2.8759055137634277,
+          "median": 7.4003071784973145,
+          "p95": 9.9840311050415,
+          "max": 13.095229148864746
+        },
+        "wrist_relative_mpjpe_mm": 30.969959259033203,
+        "rotation_aligned_mpjpe_mm": 12.13443940514567,
+        "fingertip_wrist_relative_error_mm": 43.54096221923828,
+        "per_finger_error_mm": {
+          "thumb": 27.50332260131836,
+          "index": 35.6037483215332,
+          "middle": 34.271583557128906,
+          "ring": 33.05331802368164,
+          "little": 32.16032791137695
+        },
+        "bone_direction_angular_error_deg": 25.314043045043945,
+        "visible_2d_epe_px": 19.17655372619629,
+        "visible_2d_count": 1328785,
+        "global_orientation_error_deg": 26.55556869506836,
+        "global_orientation_count": 60754
+      },
+      "pooled_definition": "sample-weighted concatenation of all dev domains; global orientation uses only available labels; never used for selection"
+    }
+  },
+  "latest_dev": {
+    "tag": "dev_0010000",
+    "domains": {
+      "dexycb": {
+        "count": 47590,
+        "finite_count": 47590,
+        "nonfinite_rate": 0.0,
+        "negative_depth_rate": 0.0,
+        "projection_collapse_rate": 0.0,
+        "failure_rate": 0.0,
+        "projection_span_px": {
+          "min": 65.70611572265625,
+          "median": 124.01598358154297,
+          "p95": 147.79825439453123,
+          "max": 220.8247528076172
+        },
+        "weak_camera_scale": {
+          "min": 4.368459224700928,
+          "median": 7.835627555847168,
+          "p95": 10.361650419235229,
+          "max": 13.295502662658691
+        },
+        "wrist_relative_mpjpe_mm": 31.413516998291016,
+        "rotation_aligned_mpjpe_mm": 10.162220271056373,
+        "fingertip_wrist_relative_error_mm": 43.06421661376953,
+        "per_finger_error_mm": {
+          "thumb": 27.797225952148438,
+          "index": 36.29518127441406,
+          "middle": 34.821224212646484,
+          "ring": 33.344146728515625,
+          "little": 32.66317367553711
+        },
+        "bone_direction_angular_error_deg": 23.1855411529541,
+        "visible_2d_epe_px": 20.0096435546875,
+        "visible_2d_count": 997798,
+        "global_orientation_error_deg": 28.44011116027832,
+        "global_orientation_count": 47590
+      },
+      "freihand": {
+        "count": 13164,
+        "finite_count": 13164,
+        "nonfinite_rate": 0.0,
+        "negative_depth_rate": 0.0,
+        "projection_collapse_rate": 0.0,
+        "failure_rate": 0.0,
+        "projection_span_px": {
+          "min": 41.086326599121094,
+          "median": 89.45698547363281,
+          "p95": 109.10770416259766,
+          "max": 143.52976989746094
+        },
+        "weak_camera_scale": {
+          "min": 2.723794937133789,
+          "median": 5.793445587158203,
+          "p95": 7.3710315227508545,
+          "max": 9.15291976928711
+        },
+        "wrist_relative_mpjpe_mm": 26.416969299316406,
+        "rotation_aligned_mpjpe_mm": 17.564102419086662,
+        "fingertip_wrist_relative_error_mm": 41.788970947265625,
+        "per_finger_error_mm": {
+          "thumb": 24.5252628326416,
+          "index": 28.922292709350586,
+          "middle": 28.77609634399414,
+          "ring": 29.20026969909668,
+          "little": 27.265169143676758
+        },
+        "bone_direction_angular_error_deg": 30.143869400024414,
+        "visible_2d_epe_px": 14.334366798400879,
+        "visible_2d_count": 276436,
+        "global_orientation_error_deg": 19.212623596191406,
+        "global_orientation_count": 13164
+      },
+      "rhd": {
+        "count": 2751,
+        "finite_count": 2751,
+        "nonfinite_rate": 0.0,
+        "negative_depth_rate": 0.0,
+        "projection_collapse_rate": 0.0,
+        "failure_rate": 0.0,
+        "projection_span_px": {
+          "min": 63.87621307373047,
+          "median": 115.41835021972656,
+          "p95": 135.85870361328125,
+          "max": 195.642578125
+        },
+        "weak_camera_scale": {
+          "min": 4.2781901359558105,
+          "median": 7.306248188018799,
+          "p95": 9.215123653411865,
+          "max": 10.777624130249023
+        },
+        "wrist_relative_mpjpe_mm": 41.39775085449219,
+        "rotation_aligned_mpjpe_mm": 18.369713070072354,
+        "fingertip_wrist_relative_error_mm": 53.68289566040039,
+        "per_finger_error_mm": {
+          "thumb": 39.93893814086914,
+          "index": 48.2887077331543,
+          "middle": 45.112491607666016,
+          "ring": 41.972251892089844,
+          "little": 42.02580261230469
+        },
+        "bone_direction_angular_error_deg": 32.56982421875,
+        "visible_2d_epe_px": 24.240888595581055,
+        "visible_2d_count": 54551,
+        "global_orientation_error_deg": null,
+        "global_orientation_count": 0
+      }
+    },
+    "mixed_aggregate": {
+      "definition": "unweighted macro mean over domains; never used for selection",
+      "wrist_relative_mpjpe_mm": 33.07607905069987,
+      "rotation_aligned_mpjpe_mm": 15.36534525340513,
+      "fingertip_wrist_relative_error_mm": 46.17869440714518,
+      "bone_direction_angular_error_deg": 28.63307825724284,
+      "visible_2d_epe_px": 19.528299649556477,
+      "nonfinite_rate": 0.0,
+      "negative_depth_rate": 0.0,
+      "projection_collapse_rate": 0.0,
+      "failure_rate": 0.0,
+      "pooled_all_metrics": {
+        "count": 63505,
+        "finite_count": 63505,
+        "nonfinite_rate": 0.0,
+        "negative_depth_rate": 0.0,
+        "projection_collapse_rate": 0.0,
+        "failure_rate": 0.0,
+        "projection_span_px": {
+          "min": 41.086326599121094,
+          "median": 119.24806213378906,
+          "p95": 145.36968994140625,
+          "max": 220.8247528076172
+        },
+        "weak_camera_scale": {
+          "min": 2.723794937133789,
+          "median": 7.46010684967041,
+          "p95": 10.106279563903806,
+          "max": 13.295502662658691
+        },
+        "wrist_relative_mpjpe_mm": 30.81028938293457,
+        "rotation_aligned_mpjpe_mm": 12.052105938118242,
+        "fingertip_wrist_relative_error_mm": 43.259864807128906,
+        "per_finger_error_mm": {
+          "thumb": 27.64495086669922,
+          "index": 35.286399841308594,
+          "middle": 34.013938903808594,
+          "ring": 32.858924865722656,
+          "little": 31.949796676635742
+        },
+        "bone_direction_angular_error_deg": 25.034465789794922,
+        "visible_2d_epe_px": 19.002683639526367,
+        "visible_2d_count": 1328785,
+        "global_orientation_error_deg": 26.440725326538086,
+        "global_orientation_count": 60754
+      },
+      "pooled_definition": "sample-weighted concatenation of all dev domains; global orientation uses only available labels; never used for selection"
+    }
+  },
+  "baseline": {
+    "dexycb": {
+      "count": 47590,
+      "finite_count": 47590,
+      "nonfinite_rate": 0.0,
+      "negative_depth_rate": 0.0,
+      "projection_collapse_rate": 0.0,
+      "failure_rate": 0.0,
+      "projection_span_px": {
+        "min": 19.375274658203125,
+        "median": 122.3083267211914,
+        "p95": 156.07835006713867,
+        "max": 259.0697326660156
+      },
+      "weak_camera_scale": {
+        "min": 1.6264902353286743,
+        "median": 6.8267107009887695,
+        "p95": 9.697860860824578,
+        "max": 18.26542854309082
+      },
+      "wrist_relative_mpjpe_mm": 64.32564544677734,
+      "rotation_aligned_mpjpe_mm": 21.961684901506263,
+      "fingertip_wrist_relative_error_mm": 84.55137634277344,
+      "per_finger_error_mm": {
+        "thumb": 54.51220703125,
+        "index": 72.82617950439453,
+        "middle": 72.46893310546875,
+        "ring": 69.83456420898438,
+        "little": 68.06769561767578
+      },
+      "bone_direction_angular_error_deg": 44.28334426879883,
+      "visible_2d_epe_px": 29.197418212890625,
+      "visible_2d_count": 997798,
+      "global_orientation_error_deg": 58.212554931640625,
+      "global_orientation_count": 47590
+    },
+    "freihand": {
+      "count": 13164,
+      "finite_count": 13164,
+      "nonfinite_rate": 0.0,
+      "negative_depth_rate": 0.0,
+      "projection_collapse_rate": 0.0,
+      "failure_rate": 0.0,
+      "projection_span_px": {
+        "min": 33.45771408081055,
+        "median": 102.2566146850586,
+        "p95": 128.6072700500488,
+        "max": 166.71347045898438
+      },
+      "weak_camera_scale": {
+        "min": 2.0253093242645264,
+        "median": 5.642467498779297,
+        "p95": 7.353500175476073,
+        "max": 10.610092163085938
+      },
+      "wrist_relative_mpjpe_mm": 55.33928680419922,
+      "rotation_aligned_mpjpe_mm": 24.02154594759174,
+      "fingertip_wrist_relative_error_mm": 76.47661590576172,
+      "per_finger_error_mm": {
+        "thumb": 50.61232376098633,
+        "index": 62.4058952331543,
+        "middle": 59.51060485839844,
+        "ring": 57.809173583984375,
+        "little": 60.19327926635742
+      },
+      "bone_direction_angular_error_deg": 36.257080078125,
+      "visible_2d_epe_px": 19.474592208862305,
+      "visible_2d_count": 276436,
+      "global_orientation_error_deg": 48.32615280151367,
+      "global_orientation_count": 13164
+    },
+    "rhd": {
+      "count": 2751,
+      "finite_count": 2751,
+      "nonfinite_rate": 0.0,
+      "negative_depth_rate": 0.0,
+      "projection_collapse_rate": 0.0,
+      "failure_rate": 0.0,
+      "projection_span_px": {
+        "min": 65.04345703125,
+        "median": 127.53895568847656,
+        "p95": 163.05663299560547,
+        "max": 241.95912170410156
+      },
+      "weak_camera_scale": {
+        "min": 4.347066402435303,
+        "median": 7.8351664543151855,
+        "p95": 10.997698307037354,
+        "max": 16.466028213500977
+      },
+      "wrist_relative_mpjpe_mm": 32.118919372558594,
+      "rotation_aligned_mpjpe_mm": 18.214516933161057,
+      "fingertip_wrist_relative_error_mm": 43.07640838623047,
+      "per_finger_error_mm": {
+        "thumb": 30.21963119506836,
+        "index": 36.372074127197266,
+        "middle": 35.04579544067383,
+        "ring": 33.0414924621582,
+        "little": 33.945350646972656
+      },
+      "bone_direction_angular_error_deg": 24.004348754882812,
+      "visible_2d_epe_px": 15.712544441223145,
+      "visible_2d_count": 54551,
+      "global_orientation_error_deg": null,
+      "global_orientation_count": 0
+    }
+  },
+  "completion": {
+    "stage": "M-S1",
+    "stop_reason": "budget_completed",
+    "last_step": 10000,
+    "best_step": 9000,
+    "checkpoint_hashes": {
+      "last.pt": "e1ae9fd6458290b26b95a9a56e5e40eae15e84e0b39d7ec94eee437692c8ad03",
+      "best_dev.pt": "1d0457e066cbd2057d7492eafb25a17dc4b0d086f4a0fdb79346baedc3331a89"
+    },
+    "strict_reload": {
+      "last.pt": {
+        "strict_load": true,
+        "repeat_forward_max_error": 0.0
+      },
+      "best_dev.pt": {
+        "strict_load": true,
+        "repeat_forward_max_error": 0.0
+      }
+    },
+    "forbidden_actions_executed": [],
+    "m_s2_started": false
+  },
+  "historical_reference_note": "The historical 32.119 mm / 43.076 mm / 15.712 px values reproduce on RHD dev, not on the frozen DexYCB subject07 dev. They remain unchanged as user-requested absolute gates. Improvement estimates use the RHD-only checkpoint evaluated on the same full DexYCB dev.",
+  "historical_smoke_failure": {
+    "run": "resnet50_real_mixed_m_s0_subject02_20261021_01",
+    "step": 100,
+    "domain": "freihand",
+    "projection_collapse_rate": 0.09375,
+    "interpretation": "plumbing diagnostic only; retained even after later recovery"
+  },
+  "train_collapse_summary": {
+    "affected_updates": 18,
+    "first_update": 281,
+    "last_update": 581,
+    "maximum_batch_rate": 0.06666667014360428,
+    "raw_evidence": "steps.jsonl; retained independently of later dev recovery"
+  },
+  "training_pool_coverage": {
+    "dexycb": {
+      "eligible_samples": 55762,
+      "unique_samples_drawn": 55762,
+      "sample_draws": 160000,
+      "coverage_fraction": 1.0,
+      "effective_passes": 2.869337541695061
+    },
+    "freihand": {
+      "eligible_samples": 117076,
+      "unique_samples_drawn": 100000,
+      "sample_draws": 100000,
+      "coverage_fraction": 0.8541460248044006,
+      "effective_passes": 0.8541460248044006
+    },
+    "rhd": {
+      "eligible_samples": 61895,
+      "unique_samples_drawn": 40000,
+      "sample_draws": 40000,
+      "coverage_fraction": 0.6462557557153243,
+      "effective_passes": 0.6462557557153243
+    }
+  },
+  "projection_history": [
+    {
+      "tag": "rhd_only_baseline",
+      "domains": {
+        "dexycb": {
+          "projection_collapse_rate": 0.0,
+          "negative_depth_rate": 0.0,
+          "nonfinite_rate": 0.0,
+          "projection_span_px": {
+            "min": 19.375274658203125,
+            "median": 122.3083267211914,
+            "p95": 156.07835006713867,
+            "max": 259.0697326660156
+          },
+          "weak_camera_scale": {
+            "min": 1.6264902353286743,
+            "median": 6.8267107009887695,
+            "p95": 9.697860860824578,
+            "max": 18.26542854309082
+          }
+        },
+        "freihand": {
+          "projection_collapse_rate": 0.0,
+          "negative_depth_rate": 0.0,
+          "nonfinite_rate": 0.0,
+          "projection_span_px": {
+            "min": 33.45771408081055,
+            "median": 102.2566146850586,
+            "p95": 128.6072700500488,
+            "max": 166.71347045898438
+          },
+          "weak_camera_scale": {
+            "min": 2.0253093242645264,
+            "median": 5.642467498779297,
+            "p95": 7.353500175476073,
+            "max": 10.610092163085938
+          }
+        },
+        "rhd": {
+          "projection_collapse_rate": 0.0,
+          "negative_depth_rate": 0.0,
+          "nonfinite_rate": 0.0,
+          "projection_span_px": {
+            "min": 65.04345703125,
+            "median": 127.53895568847656,
+            "p95": 163.05663299560547,
+            "max": 241.95912170410156
+          },
+          "weak_camera_scale": {
+            "min": 4.347066402435303,
+            "median": 7.8351664543151855,
+            "p95": 10.997698307037354,
+            "max": 16.466028213500977
+          }
+        }
+      }
+    },
+    {
+      "tag": "dev_0000000",
+      "domains": {
+        "dexycb": {
+          "projection_collapse_rate": 0.0,
+          "negative_depth_rate": 0.0,
+          "nonfinite_rate": 0.0,
+          "projection_span_px": {
+            "min": 133.84136962890625,
+            "median": 135.50650024414062,
+            "p95": 136.15547637939454,
+            "max": 137.0882568359375
+          },
+          "weak_camera_scale": {
+            "min": 8.001551628112793,
+            "median": 8.013741493225098,
+            "p95": 8.019000053405762,
+            "max": 8.027006149291992
+          }
+        },
+        "freihand": {
+          "projection_collapse_rate": 0.0,
+          "negative_depth_rate": 0.0,
+          "nonfinite_rate": 0.0,
+          "projection_span_px": {
+            "min": 133.6492919921875,
+            "median": 135.46267700195312,
+            "p95": 136.2096206665039,
+            "max": 137.32852172851562
+          },
+          "weak_camera_scale": {
+            "min": 8.000726699829102,
+            "median": 8.013063430786133,
+            "p95": 8.01899275779724,
+            "max": 8.029462814331055
+          }
+        },
+        "rhd": {
+          "projection_collapse_rate": 0.0,
+          "negative_depth_rate": 0.0,
+          "nonfinite_rate": 0.0,
+          "projection_span_px": {
+            "min": 134.1453857421875,
+            "median": 135.5576171875,
+            "p95": 136.30815887451172,
+            "max": 137.1893768310547
+          },
+          "weak_camera_scale": {
+            "min": 8.00172233581543,
+            "median": 8.012696266174316,
+            "p95": 8.01788854598999,
+            "max": 8.024534225463867
+          }
+        }
+      }
+    },
+    {
+      "tag": "train_diagnostic_0000000",
+      "domains": {
+        "dexycb": {
+          "projection_collapse_rate": 0.0,
+          "negative_depth_rate": 0.0,
+          "nonfinite_rate": 0.0,
+          "projection_span_px": {
+            "min": 134.11196899414062,
+            "median": 135.52220153808594,
+            "p95": 136.13064575195312,
+            "max": 136.59957885742188
+          },
+          "weak_camera_scale": {
+            "min": 8.005969047546387,
+            "median": 8.013442993164062,
+            "p95": 8.018643617630005,
+            "max": 8.022536277770996
+          }
+        },
+        "freihand": {
+          "projection_collapse_rate": 0.0,
+          "negative_depth_rate": 0.0,
+          "nonfinite_rate": 0.0,
+          "projection_span_px": {
+            "min": 134.2259063720703,
+            "median": 135.52288818359375,
+            "p95": 136.32239151000977,
+            "max": 136.98451232910156
+          },
+          "weak_camera_scale": {
+            "min": 8.002555847167969,
+            "median": 8.012838363647461,
+            "p95": 8.018051385879517,
+            "max": 8.021714210510254
+          }
+        },
+        "rhd": {
+          "projection_collapse_rate": 0.0,
+          "negative_depth_rate": 0.0,
+          "nonfinite_rate": 0.0,
+          "projection_span_px": {
+            "min": 134.28456115722656,
+            "median": 135.41244506835938,
+            "p95": 136.00769424438477,
+            "max": 136.998291015625
+          },
+          "weak_camera_scale": {
+            "min": 8.004984855651855,
+            "median": 8.01254653930664,
+            "p95": 8.017240762710571,
+            "max": 8.022289276123047
+          }
+        }
+      }
+    },
+    {
+      "tag": "dev_0001000",
+      "domains": {
+        "dexycb": {
+          "projection_collapse_rate": 0.0,
+          "negative_depth_rate": 0.0,
+          "nonfinite_rate": 0.0,
+          "projection_span_px": {
+            "min": 53.26627731323242,
+            "median": 99.91058349609375,
+            "p95": 125.83530235290526,
+            "max": 144.64076232910156
+          },
+          "weak_camera_scale": {
+            "min": 4.0363030433654785,
+            "median": 6.430853366851807,
+            "p95": 7.036519336700439,
+            "max": 7.678966999053955
+          }
+        },
+        "freihand": {
+          "projection_collapse_rate": 0.0,
+          "negative_depth_rate": 0.0,
+          "nonfinite_rate": 0.0,
+          "projection_span_px": {
+            "min": 25.861186981201172,
+            "median": 73.51911926269531,
+            "p95": 98.82856788635253,
+            "max": 124.9017333984375
+          },
+          "weak_camera_scale": {
+            "min": 2.0426554679870605,
+            "median": 4.826143264770508,
+            "p95": 5.849538421630859,
+            "max": 6.6497955322265625
+          }
+        },
+        "rhd": {
+          "projection_collapse_rate": 0.0,
+          "negative_depth_rate": 0.0,
+          "nonfinite_rate": 0.0,
+          "projection_span_px": {
+            "min": 50.297332763671875,
+            "median": 84.11527252197266,
+            "p95": 114.69192123413086,
+            "max": 141.999755859375
+          },
+          "weak_camera_scale": {
+            "min": 4.2344160079956055,
+            "median": 6.251506328582764,
+            "p95": 6.978090047836304,
+            "max": 7.72769021987915
+          }
+        }
+      }
+    },
+    {
+      "tag": "train_diagnostic_0001000",
+      "domains": {
+        "dexycb": {
+          "projection_collapse_rate": 0.0,
+          "negative_depth_rate": 0.0,
+          "nonfinite_rate": 0.0,
+          "projection_span_px": {
+            "min": 62.680233001708984,
+            "median": 102.49710083007812,
+            "p95": 128.96104431152344,
+            "max": 136.25343322753906
+          },
+          "weak_camera_scale": {
+            "min": 4.493645668029785,
+            "median": 6.600001335144043,
+            "p95": 7.139002323150635,
+            "max": 7.380647659301758
+          }
+        },
+        "freihand": {
+          "projection_collapse_rate": 0.0,
+          "negative_depth_rate": 0.0,
+          "nonfinite_rate": 0.0,
+          "projection_span_px": {
+            "min": 35.16059112548828,
+            "median": 73.56602478027344,
+            "p95": 96.96418380737305,
+            "max": 120.71842956542969
+          },
+          "weak_camera_scale": {
+            "min": 2.4242303371429443,
+            "median": 4.860703468322754,
+            "p95": 5.809810400009155,
+            "max": 6.350903034210205
+          }
+        },
+        "rhd": {
+          "projection_collapse_rate": 0.0,
+          "negative_depth_rate": 0.0,
+          "nonfinite_rate": 0.0,
+          "projection_span_px": {
+            "min": 52.87976837158203,
+            "median": 85.05929565429688,
+            "p95": 117.14525032043457,
+            "max": 127.42636108398438
+          },
+          "weak_camera_scale": {
+            "min": 4.075001239776611,
+            "median": 6.265673637390137,
+            "p95": 7.137476444244385,
+            "max": 7.486565589904785
+          }
+        }
+      }
+    },
+    {
+      "tag": "dev_0002000",
+      "domains": {
+        "dexycb": {
+          "projection_collapse_rate": 0.0,
+          "negative_depth_rate": 0.0,
+          "nonfinite_rate": 0.0,
+          "projection_span_px": {
+            "min": 55.37343215942383,
+            "median": 106.38320922851562,
+            "p95": 132.01450271606444,
+            "max": 154.45523071289062
+          },
+          "weak_camera_scale": {
+            "min": 4.118973255157471,
+            "median": 6.912442207336426,
+            "p95": 7.8973587274551384,
+            "max": 8.928595542907715
+          }
+        },
+        "freihand": {
+          "projection_collapse_rate": 0.0,
+          "negative_depth_rate": 0.0,
+          "nonfinite_rate": 0.0,
+          "projection_span_px": {
+            "min": 30.63617706298828,
+            "median": 78.00083923339844,
+            "p95": 100.04690933227536,
+            "max": 126.38114929199219
+          },
+          "weak_camera_scale": {
+            "min": 2.35949444770813,
+            "median": 5.117682456970215,
+            "p95": 6.180023908615112,
+            "max": 7.4112043380737305
+          }
+        },
+        "rhd": {
+          "projection_collapse_rate": 0.0,
+          "negative_depth_rate": 0.0,
+          "nonfinite_rate": 0.0,
+          "projection_span_px": {
+            "min": 52.227264404296875,
+            "median": 97.74829864501953,
+            "p95": 128.54661560058594,
+            "max": 143.2812042236328
+          },
+          "weak_camera_scale": {
+            "min": 4.744569778442383,
+            "median": 7.058317184448242,
+            "p95": 7.953796625137329,
+            "max": 8.635045051574707
+          }
+        }
+      }
+    },
+    {
+      "tag": "train_diagnostic_0002000",
+      "domains": {
+        "dexycb": {
+          "projection_collapse_rate": 0.0,
+          "negative_depth_rate": 0.0,
+          "nonfinite_rate": 0.0,
+          "projection_span_px": {
+            "min": 68.17854309082031,
+            "median": 111.35563659667969,
+            "p95": 133.7133026123047,
+            "max": 159.12921142578125
+          },
+          "weak_camera_scale": {
+            "min": 4.657863140106201,
+            "median": 7.082735538482666,
+            "p95": 8.186916589736938,
+            "max": 8.799012184143066
+          }
+        },
+        "freihand": {
+          "projection_collapse_rate": 0.0,
+          "negative_depth_rate": 0.0,
+          "nonfinite_rate": 0.0,
+          "projection_span_px": {
+            "min": 41.7847785949707,
+            "median": 78.28166198730469,
+            "p95": 98.96325492858887,
+            "max": 108.6329345703125
+          },
+          "weak_camera_scale": {
+            "min": 2.7233834266662598,
+            "median": 5.114482879638672,
+            "p95": 6.156530380249023,
+            "max": 6.585074424743652
+          }
+        },
+        "rhd": {
+          "projection_collapse_rate": 0.0,
+          "negative_depth_rate": 0.0,
+          "nonfinite_rate": 0.0,
+          "projection_span_px": {
+            "min": 67.6888198852539,
+            "median": 100.49723815917969,
+            "p95": 129.4301414489746,
+            "max": 139.3480224609375
+          },
+          "weak_camera_scale": {
+            "min": 4.8993144035339355,
+            "median": 7.097323417663574,
+            "p95": 8.138864517211914,
+            "max": 8.595059394836426
+          }
+        }
+      }
+    },
+    {
+      "tag": "dev_0003000",
+      "domains": {
+        "dexycb": {
+          "projection_collapse_rate": 0.0,
+          "negative_depth_rate": 0.0,
+          "nonfinite_rate": 0.0,
+          "projection_span_px": {
+            "min": 50.60322189331055,
+            "median": 111.23555755615234,
+            "p95": 134.60189208984374,
+            "max": 160.67147827148438
+          },
+          "weak_camera_scale": {
+            "min": 4.22881555557251,
+            "median": 7.0288166999816895,
+            "p95": 8.414432668685913,
+            "max": 9.542770385742188
+          }
+        },
+        "freihand": {
+          "projection_collapse_rate": 0.0,
+          "negative_depth_rate": 0.0,
+          "nonfinite_rate": 0.0,
+          "projection_span_px": {
+            "min": 34.86139678955078,
+            "median": 78.06884765625,
+            "p95": 99.78136367797852,
+            "max": 125.82245635986328
+          },
+          "weak_camera_scale": {
+            "min": 2.2788829803466797,
+            "median": 5.072426795959473,
+            "p95": 6.206769585609435,
+            "max": 7.599947452545166
+          }
+        },
+        "rhd": {
+          "projection_collapse_rate": 0.0,
+          "negative_depth_rate": 0.0,
+          "nonfinite_rate": 0.0,
+          "projection_span_px": {
+            "min": 59.5059700012207,
+            "median": 104.48942565917969,
+            "p95": 129.49712371826172,
+            "max": 154.79183959960938
+          },
+          "weak_camera_scale": {
+            "min": 4.758185863494873,
+            "median": 6.947967529296875,
+            "p95": 8.079644680023193,
+            "max": 8.797728538513184
+          }
+        }
+      }
+    },
+    {
+      "tag": "train_diagnostic_0003000",
+      "domains": {
+        "dexycb": {
+          "projection_collapse_rate": 0.0,
+          "negative_depth_rate": 0.0,
+          "nonfinite_rate": 0.0,
+          "projection_span_px": {
+            "min": 72.84139251708984,
+            "median": 113.58187866210938,
+            "p95": 137.68885803222656,
+            "max": 177.8675537109375
+          },
+          "weak_camera_scale": {
+            "min": 4.9160566329956055,
+            "median": 7.174502849578857,
+            "p95": 8.739955186843872,
+            "max": 9.597145080566406
+          }
+        },
+        "freihand": {
+          "projection_collapse_rate": 0.0,
+          "negative_depth_rate": 0.0,
+          "nonfinite_rate": 0.0,
+          "projection_span_px": {
+            "min": 42.878047943115234,
+            "median": 78.49198913574219,
+            "p95": 101.37470626831055,
+            "max": 114.277099609375
+          },
+          "weak_camera_scale": {
+            "min": 2.522995710372925,
+            "median": 5.044206142425537,
+            "p95": 6.251672744750977,
+            "max": 6.87614631652832
+          }
+        },
+        "rhd": {
+          "projection_collapse_rate": 0.0,
+          "negative_depth_rate": 0.0,
+          "nonfinite_rate": 0.0,
+          "projection_span_px": {
+            "min": 70.76742553710938,
+            "median": 106.81825256347656,
+            "p95": 131.7076873779297,
+            "max": 144.49249267578125
+          },
+          "weak_camera_scale": {
+            "min": 4.85462760925293,
+            "median": 7.010372161865234,
+            "p95": 8.354507446289062,
+            "max": 8.927631378173828
+          }
+        }
+      }
+    },
+    {
+      "tag": "dev_0004000",
+      "domains": {
+        "dexycb": {
+          "projection_collapse_rate": 0.0,
+          "negative_depth_rate": 0.0,
+          "nonfinite_rate": 0.0,
+          "projection_span_px": {
+            "min": 65.29063415527344,
+            "median": 116.35655212402344,
+            "p95": 138.8491539001465,
+            "max": 174.18231201171875
+          },
+          "weak_camera_scale": {
+            "min": 4.217654228210449,
+            "median": 7.377725601196289,
+            "p95": 8.976947259902953,
+            "max": 10.50731086730957
+          }
+        },
+        "freihand": {
+          "projection_collapse_rate": 0.0,
+          "negative_depth_rate": 0.0,
+          "nonfinite_rate": 0.0,
+          "projection_span_px": {
+            "min": 37.49463653564453,
+            "median": 82.73890686035156,
+            "p95": 103.20475578308104,
+            "max": 133.1053466796875
+          },
+          "weak_camera_scale": {
+            "min": 2.6076362133026123,
+            "median": 5.403238296508789,
+            "p95": 6.714016914367675,
+            "max": 7.852776050567627
+          }
+        },
+        "rhd": {
+          "projection_collapse_rate": 0.0,
+          "negative_depth_rate": 0.0,
+          "nonfinite_rate": 0.0,
+          "projection_span_px": {
+            "min": 64.88531494140625,
+            "median": 109.12200164794922,
+            "p95": 130.44699096679688,
+            "max": 172.6563720703125
+          },
+          "weak_camera_scale": {
+            "min": 4.601045608520508,
+            "median": 7.110255718231201,
+            "p95": 8.40462589263916,
+            "max": 9.389703750610352
+          }
+        }
+      }
+    },
+    {
+      "tag": "train_diagnostic_0004000",
+      "domains": {
+        "dexycb": {
+          "projection_collapse_rate": 0.0,
+          "negative_depth_rate": 0.0,
+          "nonfinite_rate": 0.0,
+          "projection_span_px": {
+            "min": 87.42068481445312,
+            "median": 118.66152954101562,
+            "p95": 139.01723861694336,
+            "max": 191.57916259765625
+          },
+          "weak_camera_scale": {
+            "min": 4.934544563293457,
+            "median": 7.467072486877441,
+            "p95": 9.303715229034424,
+            "max": 10.50030517578125
+          }
+        },
+        "freihand": {
+          "projection_collapse_rate": 0.0,
+          "negative_depth_rate": 0.0,
+          "nonfinite_rate": 0.0,
+          "projection_span_px": {
+            "min": 44.79010772705078,
+            "median": 83.29061889648438,
+            "p95": 102.38447570800781,
+            "max": 113.48946380615234
+          },
+          "weak_camera_scale": {
+            "min": 3.2561566829681396,
+            "median": 5.369687080383301,
+            "p95": 6.574491262435913,
+            "max": 7.233108997344971
+          }
+        },
+        "rhd": {
+          "projection_collapse_rate": 0.0,
+          "negative_depth_rate": 0.0,
+          "nonfinite_rate": 0.0,
+          "projection_span_px": {
+            "min": 74.92198944091797,
+            "median": 113.76602172851562,
+            "p95": 132.28137969970703,
+            "max": 146.72308349609375
+          },
+          "weak_camera_scale": {
+            "min": 4.977181911468506,
+            "median": 7.214053630828857,
+            "p95": 8.766043424606323,
+            "max": 9.297075271606445
+          }
+        }
+      }
+    },
+    {
+      "tag": "dev_0005000",
+      "domains": {
+        "dexycb": {
+          "projection_collapse_rate": 0.0,
+          "negative_depth_rate": 0.0,
+          "nonfinite_rate": 0.0,
+          "projection_span_px": {
+            "min": 63.170372009277344,
+            "median": 116.42268371582031,
+            "p95": 139.7444236755371,
+            "max": 179.7523193359375
+          },
+          "weak_camera_scale": {
+            "min": 4.395963191986084,
+            "median": 7.447715759277344,
+            "p95": 9.360771322250365,
+            "max": 11.208686828613281
+          }
+        },
+        "freihand": {
+          "projection_collapse_rate": 0.0,
+          "negative_depth_rate": 0.0,
+          "nonfinite_rate": 0.0,
+          "projection_span_px": {
+            "min": 37.09097671508789,
+            "median": 84.0573959350586,
+            "p95": 104.60568313598631,
+            "max": 139.81661987304688
+          },
+          "weak_camera_scale": {
+            "min": 2.5976624488830566,
+            "median": 5.470658302307129,
+            "p95": 6.7474164962768555,
+            "max": 8.143840789794922
+          }
+        },
+        "rhd": {
+          "projection_collapse_rate": 0.0,
+          "negative_depth_rate": 0.0,
+          "nonfinite_rate": 0.0,
+          "projection_span_px": {
+            "min": 65.86129760742188,
+            "median": 108.64179992675781,
+            "p95": 128.9423370361328,
+            "max": 162.5697021484375
+          },
+          "weak_camera_scale": {
+            "min": 3.9041309356689453,
+            "median": 7.008025646209717,
+            "p95": 8.522078037261963,
+            "max": 9.743237495422363
+          }
+        }
+      }
+    },
+    {
+      "tag": "train_diagnostic_0005000",
+      "domains": {
+        "dexycb": {
+          "projection_collapse_rate": 0.0,
+          "negative_depth_rate": 0.0,
+          "nonfinite_rate": 0.0,
+          "projection_span_px": {
+            "min": 84.9432373046875,
+            "median": 118.66478729248047,
+            "p95": 137.98165893554688,
+            "max": 193.6044464111328
+          },
+          "weak_camera_scale": {
+            "min": 4.921867370605469,
+            "median": 7.425004005432129,
+            "p95": 9.708556890487671,
+            "max": 10.920368194580078
+          }
+        },
+        "freihand": {
+          "projection_collapse_rate": 0.0,
+          "negative_depth_rate": 0.0,
+          "nonfinite_rate": 0.0,
+          "projection_span_px": {
+            "min": 44.873985290527344,
+            "median": 84.7060546875,
+            "p95": 103.56156921386719,
+            "max": 112.32402801513672
+          },
+          "weak_camera_scale": {
+            "min": 3.2381720542907715,
+            "median": 5.438817977905273,
+            "p95": 6.617691993713379,
+            "max": 7.40799617767334
+          }
+        },
+        "rhd": {
+          "projection_collapse_rate": 0.0,
+          "negative_depth_rate": 0.0,
+          "nonfinite_rate": 0.0,
+          "projection_span_px": {
+            "min": 71.46861267089844,
+            "median": 112.2213134765625,
+            "p95": 130.84459686279297,
+            "max": 145.21209716796875
+          },
+          "weak_camera_scale": {
+            "min": 4.630975723266602,
+            "median": 7.223994255065918,
+            "p95": 8.940765380859375,
+            "max": 9.642573356628418
+          }
+        }
+      }
+    },
+    {
+      "tag": "dev_0006000",
+      "domains": {
+        "dexycb": {
+          "projection_collapse_rate": 0.0,
+          "negative_depth_rate": 0.0,
+          "nonfinite_rate": 0.0,
+          "projection_span_px": {
+            "min": 57.319664001464844,
+            "median": 118.80573272705078,
+            "p95": 141.0000442504883,
+            "max": 187.33828735351562
+          },
+          "weak_camera_scale": {
+            "min": 4.319107532501221,
+            "median": 7.542977333068848,
+            "p95": 9.664554357528687,
+            "max": 11.69692325592041
+          }
+        },
+        "freihand": {
+          "projection_collapse_rate": 0.0,
+          "negative_depth_rate": 0.0,
+          "nonfinite_rate": 0.0,
+          "projection_span_px": {
+            "min": 39.68020248413086,
+            "median": 86.22816467285156,
+            "p95": 106.46280822753906,
+            "max": 143.8815460205078
+          },
+          "weak_camera_scale": {
+            "min": 2.6901919841766357,
+            "median": 5.59238338470459,
+            "p95": 6.993034315109251,
+            "max": 8.520503997802734
+          }
+        },
+        "rhd": {
+          "projection_collapse_rate": 0.0,
+          "negative_depth_rate": 0.0,
+          "nonfinite_rate": 0.0,
+          "projection_span_px": {
+            "min": 67.27884674072266,
+            "median": 112.66656494140625,
+            "p95": 132.702880859375,
+            "max": 174.0810089111328
+          },
+          "weak_camera_scale": {
+            "min": 3.915736675262451,
+            "median": 7.199735164642334,
+            "p95": 8.865807056427002,
+            "max": 10.077719688415527
+          }
+        }
+      }
+    },
+    {
+      "tag": "train_diagnostic_0006000",
+      "domains": {
+        "dexycb": {
+          "projection_collapse_rate": 0.0,
+          "negative_depth_rate": 0.0,
+          "nonfinite_rate": 0.0,
+          "projection_span_px": {
+            "min": 86.96644592285156,
+            "median": 121.05392456054688,
+            "p95": 141.2842559814453,
+            "max": 194.32562255859375
+          },
+          "weak_camera_scale": {
+            "min": 5.013772487640381,
+            "median": 7.604524612426758,
+            "p95": 9.96030855178833,
+            "max": 10.886741638183594
+          }
+        },
+        "freihand": {
+          "projection_collapse_rate": 0.0,
+          "negative_depth_rate": 0.0,
+          "nonfinite_rate": 0.0,
+          "projection_span_px": {
+            "min": 51.241310119628906,
+            "median": 87.03184509277344,
+            "p95": 103.46711158752441,
+            "max": 114.65995025634766
+          },
+          "weak_camera_scale": {
+            "min": 3.3739633560180664,
+            "median": 5.536208152770996,
+            "p95": 6.853649616241455,
+            "max": 7.751556873321533
+          }
+        },
+        "rhd": {
+          "projection_collapse_rate": 0.0,
+          "negative_depth_rate": 0.0,
+          "nonfinite_rate": 0.0,
+          "projection_span_px": {
+            "min": 72.91191864013672,
+            "median": 117.2502670288086,
+            "p95": 133.8480567932129,
+            "max": 149.1493682861328
+          },
+          "weak_camera_scale": {
+            "min": 4.879593372344971,
+            "median": 7.43474006652832,
+            "p95": 9.312745571136475,
+            "max": 9.923213958740234
+          }
+        }
+      }
+    },
+    {
+      "tag": "dev_0007000",
+      "domains": {
+        "dexycb": {
+          "projection_collapse_rate": 0.0,
+          "negative_depth_rate": 0.0,
+          "nonfinite_rate": 0.0,
+          "projection_span_px": {
+            "min": 63.466644287109375,
+            "median": 120.74224853515625,
+            "p95": 143.23921051025388,
+            "max": 197.63404846191406
+          },
+          "weak_camera_scale": {
+            "min": 4.643422603607178,
+            "median": 7.61216926574707,
+            "p95": 9.840548229217529,
+            "max": 12.389251708984375
+          }
+        },
+        "freihand": {
+          "projection_collapse_rate": 0.0,
+          "negative_depth_rate": 0.0,
+          "nonfinite_rate": 0.0,
+          "projection_span_px": {
+            "min": 36.47802734375,
+            "median": 88.61396789550781,
+            "p95": 109.41546554565429,
+            "max": 142.4834442138672
+          },
+          "weak_camera_scale": {
+            "min": 2.2065317630767822,
+            "median": 5.7228193283081055,
+            "p95": 7.132377505302428,
+            "max": 8.584456443786621
+          }
+        },
+        "rhd": {
+          "projection_collapse_rate": 0.0,
+          "negative_depth_rate": 0.0,
+          "nonfinite_rate": 0.0,
+          "projection_span_px": {
+            "min": 72.69573974609375,
+            "median": 112.24860382080078,
+            "p95": 131.8938217163086,
+            "max": 185.8711700439453
+          },
+          "weak_camera_scale": {
+            "min": 4.005026340484619,
+            "median": 7.247472286224365,
+            "p95": 9.000656604766846,
+            "max": 10.325188636779785
+          }
+        }
+      }
+    },
+    {
+      "tag": "train_diagnostic_0007000",
+      "domains": {
+        "dexycb": {
+          "projection_collapse_rate": 0.0,
+          "negative_depth_rate": 0.0,
+          "nonfinite_rate": 0.0,
+          "projection_span_px": {
+            "min": 81.97224426269531,
+            "median": 122.17359161376953,
+            "p95": 140.45394134521484,
+            "max": 198.2123260498047
+          },
+          "weak_camera_scale": {
+            "min": 5.0440592765808105,
+            "median": 7.676370620727539,
+            "p95": 10.050904512405396,
+            "max": 10.92518138885498
+          }
+        },
+        "freihand": {
+          "projection_collapse_rate": 0.0,
+          "negative_depth_rate": 0.0,
+          "nonfinite_rate": 0.0,
+          "projection_span_px": {
+            "min": 53.33043670654297,
+            "median": 88.03455352783203,
+            "p95": 107.15082168579102,
+            "max": 123.69772338867188
+          },
+          "weak_camera_scale": {
+            "min": 3.625251293182373,
+            "median": 5.633139610290527,
+            "p95": 6.962853670120239,
+            "max": 8.189595222473145
+          }
+        },
+        "rhd": {
+          "projection_collapse_rate": 0.0,
+          "negative_depth_rate": 0.0,
+          "nonfinite_rate": 0.0,
+          "projection_span_px": {
+            "min": 79.7518539428711,
+            "median": 116.36073303222656,
+            "p95": 134.71831512451172,
+            "max": 152.97007751464844
+          },
+          "weak_camera_scale": {
+            "min": 4.9199676513671875,
+            "median": 7.6029052734375,
+            "p95": 9.46669340133667,
+            "max": 10.170137405395508
+          }
+        }
+      }
+    },
+    {
+      "tag": "dev_0008000",
+      "domains": {
+        "dexycb": {
+          "projection_collapse_rate": 0.0,
+          "negative_depth_rate": 0.0,
+          "nonfinite_rate": 0.0,
+          "projection_span_px": {
+            "min": 65.5421142578125,
+            "median": 123.45501708984375,
+            "p95": 146.41309432983397,
+            "max": 206.28466796875
+          },
+          "weak_camera_scale": {
+            "min": 4.602859020233154,
+            "median": 7.798855304718018,
+            "p95": 10.144019365310669,
+            "max": 12.784008026123047
+          }
+        },
+        "freihand": {
+          "projection_collapse_rate": 0.0,
+          "negative_depth_rate": 0.0,
+          "nonfinite_rate": 0.0,
+          "projection_span_px": {
+            "min": 40.25311279296875,
+            "median": 89.99185180664062,
+            "p95": 109.48296470642089,
+            "max": 143.75186157226562
+          },
+          "weak_camera_scale": {
+            "min": 2.8110761642456055,
+            "median": 5.836002349853516,
+            "p95": 7.318904566764831,
+            "max": 8.896347045898438
+          }
+        },
+        "rhd": {
+          "projection_collapse_rate": 0.0,
+          "negative_depth_rate": 0.0,
+          "nonfinite_rate": 0.0,
+          "projection_span_px": {
+            "min": 74.33709716796875,
+            "median": 116.75254821777344,
+            "p95": 137.58954620361328,
+            "max": 185.8626708984375
+          },
+          "weak_camera_scale": {
+            "min": 4.2821831703186035,
+            "median": 7.303579807281494,
+            "p95": 9.095925331115723,
+            "max": 10.383807182312012
+          }
+        }
+      }
+    },
+    {
+      "tag": "train_diagnostic_0008000",
+      "domains": {
+        "dexycb": {
+          "projection_collapse_rate": 0.0,
+          "negative_depth_rate": 0.0,
+          "nonfinite_rate": 0.0,
+          "projection_span_px": {
+            "min": 89.71226501464844,
+            "median": 123.95313262939453,
+            "p95": 143.17356872558594,
+            "max": 201.6439666748047
+          },
+          "weak_camera_scale": {
+            "min": 5.112435340881348,
+            "median": 7.826465606689453,
+            "p95": 10.33306360244751,
+            "max": 11.183189392089844
+          }
+        },
+        "freihand": {
+          "projection_collapse_rate": 0.0,
+          "negative_depth_rate": 0.0,
+          "nonfinite_rate": 0.0,
+          "projection_span_px": {
+            "min": 58.03395080566406,
+            "median": 88.78419494628906,
+            "p95": 107.37765884399414,
+            "max": 121.68636322021484
+          },
+          "weak_camera_scale": {
+            "min": 3.5533955097198486,
+            "median": 5.77130126953125,
+            "p95": 7.189739942550659,
+            "max": 8.408344268798828
+          }
+        },
+        "rhd": {
+          "projection_collapse_rate": 0.0,
+          "negative_depth_rate": 0.0,
+          "nonfinite_rate": 0.0,
+          "projection_span_px": {
+            "min": 76.46984100341797,
+            "median": 120.61073303222656,
+            "p95": 139.62965774536133,
+            "max": 151.0691680908203
+          },
+          "weak_camera_scale": {
+            "min": 5.039959907531738,
+            "median": 7.519007682800293,
+            "p95": 9.581491470336914,
+            "max": 10.299328804016113
+          }
+        }
+      }
+    },
+    {
+      "tag": "dev_0009000",
+      "domains": {
+        "dexycb": {
+          "projection_collapse_rate": 0.0,
+          "negative_depth_rate": 0.0,
+          "nonfinite_rate": 0.0,
+          "projection_span_px": {
+            "min": 65.36643981933594,
+            "median": 123.51214599609375,
+            "p95": 146.99000091552733,
+            "max": 210.60568237304688
+          },
+          "weak_camera_scale": {
+            "min": 4.445911407470703,
+            "median": 7.770838737487793,
+            "p95": 10.231021213531491,
+            "max": 13.095229148864746
+          }
+        },
+        "freihand": {
+          "projection_collapse_rate": 0.0,
+          "negative_depth_rate": 0.0,
+          "nonfinite_rate": 0.0,
+          "projection_span_px": {
+            "min": 43.318355560302734,
+            "median": 89.41743469238281,
+            "p95": 109.65924377441407,
+            "max": 141.923095703125
+          },
+          "weak_camera_scale": {
+            "min": 2.8759055137634277,
+            "median": 5.794992923736572,
+            "p95": 7.289091420173644,
+            "max": 8.991302490234375
+          }
+        },
+        "rhd": {
+          "projection_collapse_rate": 0.0,
+          "negative_depth_rate": 0.0,
+          "nonfinite_rate": 0.0,
+          "projection_span_px": {
+            "min": 68.71369171142578,
+            "median": 115.85688781738281,
+            "p95": 136.51031494140625,
+            "max": 191.63497924804688
+          },
+          "weak_camera_scale": {
+            "min": 4.242313385009766,
+            "median": 7.2041521072387695,
+            "p95": 9.071794033050537,
+            "max": 10.613473892211914
+          }
+        }
+      }
+    },
+    {
+      "tag": "train_diagnostic_0009000",
+      "domains": {
+        "dexycb": {
+          "projection_collapse_rate": 0.0,
+          "negative_depth_rate": 0.0,
+          "nonfinite_rate": 0.0,
+          "projection_span_px": {
+            "min": 87.83514404296875,
+            "median": 123.71142578125,
+            "p95": 143.93119049072266,
+            "max": 203.77880859375
+          },
+          "weak_camera_scale": {
+            "min": 5.065121650695801,
+            "median": 7.846247673034668,
+            "p95": 10.398371458053589,
+            "max": 11.451536178588867
+          }
+        },
+        "freihand": {
+          "projection_collapse_rate": 0.0,
+          "negative_depth_rate": 0.0,
+          "nonfinite_rate": 0.0,
+          "projection_span_px": {
+            "min": 45.27427673339844,
+            "median": 88.83439636230469,
+            "p95": 107.36148452758789,
+            "max": 124.76394653320312
+          },
+          "weak_camera_scale": {
+            "min": 3.5695455074310303,
+            "median": 5.732988357543945,
+            "p95": 7.0588496923446655,
+            "max": 8.347257614135742
+          }
+        },
+        "rhd": {
+          "projection_collapse_rate": 0.0,
+          "negative_depth_rate": 0.0,
+          "nonfinite_rate": 0.0,
+          "projection_span_px": {
+            "min": 78.74908447265625,
+            "median": 118.35441589355469,
+            "p95": 138.3252067565918,
+            "max": 158.63455200195312
+          },
+          "weak_camera_scale": {
+            "min": 4.878147602081299,
+            "median": 7.516778945922852,
+            "p95": 9.635568618774414,
+            "max": 10.343317031860352
+          }
+        }
+      }
+    },
+    {
+      "tag": "dev_0010000",
+      "domains": {
+        "dexycb": {
+          "projection_collapse_rate": 0.0,
+          "negative_depth_rate": 0.0,
+          "nonfinite_rate": 0.0,
+          "projection_span_px": {
+            "min": 65.70611572265625,
+            "median": 124.01598358154297,
+            "p95": 147.79825439453123,
+            "max": 220.8247528076172
+          },
+          "weak_camera_scale": {
+            "min": 4.368459224700928,
+            "median": 7.835627555847168,
+            "p95": 10.361650419235229,
+            "max": 13.295502662658691
+          }
+        },
+        "freihand": {
+          "projection_collapse_rate": 0.0,
+          "negative_depth_rate": 0.0,
+          "nonfinite_rate": 0.0,
+          "projection_span_px": {
+            "min": 41.086326599121094,
+            "median": 89.45698547363281,
+            "p95": 109.10770416259766,
+            "max": 143.52976989746094
+          },
+          "weak_camera_scale": {
+            "min": 2.723794937133789,
+            "median": 5.793445587158203,
+            "p95": 7.3710315227508545,
+            "max": 9.15291976928711
+          }
+        },
+        "rhd": {
+          "projection_collapse_rate": 0.0,
+          "negative_depth_rate": 0.0,
+          "nonfinite_rate": 0.0,
+          "projection_span_px": {
+            "min": 63.87621307373047,
+            "median": 115.41835021972656,
+            "p95": 135.85870361328125,
+            "max": 195.642578125
+          },
+          "weak_camera_scale": {
+            "min": 4.2781901359558105,
+            "median": 7.306248188018799,
+            "p95": 9.215123653411865,
+            "max": 10.777624130249023
+          }
+        }
+      }
+    },
+    {
+      "tag": "train_diagnostic_0010000",
+      "domains": {
+        "dexycb": {
+          "projection_collapse_rate": 0.0,
+          "negative_depth_rate": 0.0,
+          "nonfinite_rate": 0.0,
+          "projection_span_px": {
+            "min": 87.20172882080078,
+            "median": 124.48741149902344,
+            "p95": 145.85830307006836,
+            "max": 203.98983764648438
+          },
+          "weak_camera_scale": {
+            "min": 5.1273932456970215,
+            "median": 7.920632362365723,
+            "p95": 10.528732776641846,
+            "max": 11.416738510131836
+          }
+        },
+        "freihand": {
+          "projection_collapse_rate": 0.0,
+          "negative_depth_rate": 0.0,
+          "nonfinite_rate": 0.0,
+          "projection_span_px": {
+            "min": 42.56734085083008,
+            "median": 89.17008972167969,
+            "p95": 106.40485191345215,
+            "max": 117.99104309082031
+          },
+          "weak_camera_scale": {
+            "min": 3.4510977268218994,
+            "median": 5.717006206512451,
+            "p95": 7.121635317802429,
+            "max": 8.455253601074219
+          }
+        },
+        "rhd": {
+          "projection_collapse_rate": 0.0,
+          "negative_depth_rate": 0.0,
+          "nonfinite_rate": 0.0,
+          "projection_span_px": {
+            "min": 79.49455261230469,
+            "median": 119.39595031738281,
+            "p95": 140.019287109375,
+            "max": 158.41860961914062
+          },
+          "weak_camera_scale": {
+            "min": 4.928530216217041,
+            "median": 7.624567985534668,
+            "p95": 9.74596357345581,
+            "max": 10.523880958557129
+          }
+        }
+      }
+    }
+  ]
+}

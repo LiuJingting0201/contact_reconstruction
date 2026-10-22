@@ -1,0 +1,368 @@
+{
+  "passed": true,
+  "model_calls": 0,
+  "final_e4_data_reads": 0,
+  "checks": [
+    "copied code/config hashes",
+    "split row and file hashes",
+    "Dex subject/sequence disjointness",
+    "ordered full dev IDs",
+    "saved geometry/2D/failure metric recomputation",
+    "safe best checkpoint selection",
+    "collapse stop",
+    "checkpoint hashes and recorded reload checks",
+    "early failure retention"
+  ],
+  "verified_evaluations": [
+    {
+      "tag": "rhd_only_baseline",
+      "domain": "dexycb",
+      "samples": 47590
+    },
+    {
+      "tag": "rhd_only_baseline",
+      "domain": "freihand",
+      "samples": 13164
+    },
+    {
+      "tag": "rhd_only_baseline",
+      "domain": "rhd",
+      "samples": 2751
+    },
+    {
+      "tag": "dev_0000000",
+      "domain": "dexycb",
+      "samples": 47590
+    },
+    {
+      "tag": "dev_0000000",
+      "domain": "freihand",
+      "samples": 13164
+    },
+    {
+      "tag": "dev_0000000",
+      "domain": "rhd",
+      "samples": 2751
+    },
+    {
+      "tag": "train_diagnostic_0000000",
+      "domain": "dexycb",
+      "samples": 256
+    },
+    {
+      "tag": "train_diagnostic_0000000",
+      "domain": "freihand",
+      "samples": 256
+    },
+    {
+      "tag": "train_diagnostic_0000000",
+      "domain": "rhd",
+      "samples": 256
+    },
+    {
+      "tag": "dev_0001000",
+      "domain": "dexycb",
+      "samples": 47590
+    },
+    {
+      "tag": "dev_0001000",
+      "domain": "freihand",
+      "samples": 13164
+    },
+    {
+      "tag": "dev_0001000",
+      "domain": "rhd",
+      "samples": 2751
+    },
+    {
+      "tag": "train_diagnostic_0001000",
+      "domain": "dexycb",
+      "samples": 256
+    },
+    {
+      "tag": "train_diagnostic_0001000",
+      "domain": "freihand",
+      "samples": 256
+    },
+    {
+      "tag": "train_diagnostic_0001000",
+      "domain": "rhd",
+      "samples": 256
+    },
+    {
+      "tag": "dev_0002000",
+      "domain": "dexycb",
+      "samples": 47590
+    },
+    {
+      "tag": "dev_0002000",
+      "domain": "freihand",
+      "samples": 13164
+    },
+    {
+      "tag": "dev_0002000",
+      "domain": "rhd",
+      "samples": 2751
+    },
+    {
+      "tag": "train_diagnostic_0002000",
+      "domain": "dexycb",
+      "samples": 256
+    },
+    {
+      "tag": "train_diagnostic_0002000",
+      "domain": "freihand",
+      "samples": 256
+    },
+    {
+      "tag": "train_diagnostic_0002000",
+      "domain": "rhd",
+      "samples": 256
+    },
+    {
+      "tag": "dev_0003000",
+      "domain": "dexycb",
+      "samples": 47590
+    },
+    {
+      "tag": "dev_0003000",
+      "domain": "freihand",
+      "samples": 13164
+    },
+    {
+      "tag": "dev_0003000",
+      "domain": "rhd",
+      "samples": 2751
+    },
+    {
+      "tag": "train_diagnostic_0003000",
+      "domain": "dexycb",
+      "samples": 256
+    },
+    {
+      "tag": "train_diagnostic_0003000",
+      "domain": "freihand",
+      "samples": 256
+    },
+    {
+      "tag": "train_diagnostic_0003000",
+      "domain": "rhd",
+      "samples": 256
+    },
+    {
+      "tag": "dev_0004000",
+      "domain": "dexycb",
+      "samples": 47590
+    },
+    {
+      "tag": "dev_0004000",
+      "domain": "freihand",
+      "samples": 13164
+    },
+    {
+      "tag": "dev_0004000",
+      "domain": "rhd",
+      "samples": 2751
+    },
+    {
+      "tag": "train_diagnostic_0004000",
+      "domain": "dexycb",
+      "samples": 256
+    },
+    {
+      "tag": "train_diagnostic_0004000",
+      "domain": "freihand",
+      "samples": 256
+    },
+    {
+      "tag": "train_diagnostic_0004000",
+      "domain": "rhd",
+      "samples": 256
+    },
+    {
+      "tag": "dev_0005000",
+      "domain": "dexycb",
+      "samples": 47590
+    },
+    {
+      "tag": "dev_0005000",
+      "domain": "freihand",
+      "samples": 13164
+    },
+    {
+      "tag": "dev_0005000",
+      "domain": "rhd",
+      "samples": 2751
+    },
+    {
+      "tag": "train_diagnostic_0005000",
+      "domain": "dexycb",
+      "samples": 256
+    },
+    {
+      "tag": "train_diagnostic_0005000",
+      "domain": "freihand",
+      "samples": 256
+    },
+    {
+      "tag": "train_diagnostic_0005000",
+      "domain": "rhd",
+      "samples": 256
+    },
+    {
+      "tag": "dev_0006000",
+      "domain": "dexycb",
+      "samples": 47590
+    },
+    {
+      "tag": "dev_0006000",
+      "domain": "freihand",
+      "samples": 13164
+    },
+    {
+      "tag": "dev_0006000",
+      "domain": "rhd",
+      "samples": 2751
+    },
+    {
+      "tag": "train_diagnostic_0006000",
+      "domain": "dexycb",
+      "samples": 256
+    },
+    {
+      "tag": "train_diagnostic_0006000",
+      "domain": "freihand",
+      "samples": 256
+    },
+    {
+      "tag": "train_diagnostic_0006000",
+      "domain": "rhd",
+      "samples": 256
+    },
+    {
+      "tag": "dev_0007000",
+      "domain": "dexycb",
+      "samples": 47590
+    },
+    {
+      "tag": "dev_0007000",
+      "domain": "freihand",
+      "samples": 13164
+    },
+    {
+      "tag": "dev_0007000",
+      "domain": "rhd",
+      "samples": 2751
+    },
+    {
+      "tag": "train_diagnostic_0007000",
+      "domain": "dexycb",
+      "samples": 256
+    },
+    {
+      "tag": "train_diagnostic_0007000",
+      "domain": "freihand",
+      "samples": 256
+    },
+    {
+      "tag": "train_diagnostic_0007000",
+      "domain": "rhd",
+      "samples": 256
+    },
+    {
+      "tag": "dev_0008000",
+      "domain": "dexycb",
+      "samples": 47590
+    },
+    {
+      "tag": "dev_0008000",
+      "domain": "freihand",
+      "samples": 13164
+    },
+    {
+      "tag": "dev_0008000",
+      "domain": "rhd",
+      "samples": 2751
+    },
+    {
+      "tag": "train_diagnostic_0008000",
+      "domain": "dexycb",
+      "samples": 256
+    },
+    {
+      "tag": "train_diagnostic_0008000",
+      "domain": "freihand",
+      "samples": 256
+    },
+    {
+      "tag": "train_diagnostic_0008000",
+      "domain": "rhd",
+      "samples": 256
+    },
+    {
+      "tag": "dev_0009000",
+      "domain": "dexycb",
+      "samples": 47590
+    },
+    {
+      "tag": "dev_0009000",
+      "domain": "freihand",
+      "samples": 13164
+    },
+    {
+      "tag": "dev_0009000",
+      "domain": "rhd",
+      "samples": 2751
+    },
+    {
+      "tag": "train_diagnostic_0009000",
+      "domain": "dexycb",
+      "samples": 256
+    },
+    {
+      "tag": "train_diagnostic_0009000",
+      "domain": "freihand",
+      "samples": 256
+    },
+    {
+      "tag": "train_diagnostic_0009000",
+      "domain": "rhd",
+      "samples": 256
+    },
+    {
+      "tag": "dev_0010000",
+      "domain": "dexycb",
+      "samples": 47590
+    },
+    {
+      "tag": "dev_0010000",
+      "domain": "freihand",
+      "samples": 13164
+    },
+    {
+      "tag": "dev_0010000",
+      "domain": "rhd",
+      "samples": 2751
+    },
+    {
+      "tag": "train_diagnostic_0010000",
+      "domain": "dexycb",
+      "samples": 256
+    },
+    {
+      "tag": "train_diagnostic_0010000",
+      "domain": "freihand",
+      "samples": 256
+    },
+    {
+      "tag": "train_diagnostic_0010000",
+      "domain": "rhd",
+      "samples": 256
+    }
+  ],
+  "selected_step": 9000,
+  "limitations": [
+    "Verifies saved evidence, not an independent proof of runtime access history.",
+    "Does not re-read source data or rerun inference."
+  ]
+}

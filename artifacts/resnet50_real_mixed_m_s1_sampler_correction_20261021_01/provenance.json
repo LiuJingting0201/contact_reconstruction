@@ -1,0 +1,17 @@
+{
+  "config_sha256": "6032fe0f4e0300ca0661259c80c33b03017d79e97ef3c9ce240721371ec69a56",
+  "script_sha256": "24aef23016dd62a54a21ec7d13dc31f4f9e548ecde269b234180cab4ea71f303",
+  "base_script_sha256": "f3d39a20755f6832c74c995036118f33a85069aa90c63f5d117289766f4796ac",
+  "imagenet_sha256": "11ad3fa62ca79e40addfd354a8ec4b7c75143b3038b8d2a807fbc68deab379ca",
+  "train_counts": {
+    "dexycb": 55762,
+    "freihand": 117076,
+    "rhd": 61895
+  },
+  "dev_counts": {
+    "dexycb": 47590,
+    "freihand": 13164,
+    "rhd": 2751
+  },
+  "initialization": "Fresh ImageNet1K V2 backbone and new head; no smoke checkpoint"
+}
